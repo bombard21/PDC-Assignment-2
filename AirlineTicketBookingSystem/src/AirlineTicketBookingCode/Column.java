@@ -1,4 +1,4 @@
-package airlineReservation;
+package AirlineTicketBookingCode;
 
 public class Column {
     private char letter;

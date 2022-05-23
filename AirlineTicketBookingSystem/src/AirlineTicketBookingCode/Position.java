@@ -1,4 +1,4 @@
-package airlineReservation;
+package AirlineTicketBookingCode;
 
 public class Position {
 

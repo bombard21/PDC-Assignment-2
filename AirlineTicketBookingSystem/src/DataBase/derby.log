@@ -29,3 +29,9 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase
 Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon May 23 18:31:20 NZST 2022: Shutting down Derby engine
+----------------------------------------------------------------
+Mon May 23 18:31:20 NZST 2022:
+Shutting down instance 6ede40af-0180-ef30-671c-00003653e965 on database directory E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase\DataBase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
+----------------------------------------------------------------

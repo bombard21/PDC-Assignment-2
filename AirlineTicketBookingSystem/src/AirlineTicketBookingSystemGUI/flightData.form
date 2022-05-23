@@ -23,13 +23,72 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="flightDataList" min="-2" pref="70" max="-2" attributes="0"/>
+                  <Component id="planeidLabel" pref="75" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="list1" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="list2" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="list3" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="list4" min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="idTextfield" min="-2" pref="322" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="planeidLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="idTextfield" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="flightDataList" pref="245" max="32767" attributes="0"/>
+                  <Component id="list1" max="32767" attributes="0"/>
+                  <Component id="list2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="list3" max="32767" attributes="0"/>
+                  <Component id="list4" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="planeidLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Plane ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="idTextfield">
+    </Component>
+    <Component class="java.awt.List" name="flightDataList">
+    </Component>
+    <Component class="java.awt.List" name="list1">
+    </Component>
+    <Component class="java.awt.List" name="list2">
+    </Component>
+    <Component class="java.awt.List" name="list3">
+    </Component>
+    <Component class="java.awt.List" name="list4">
+    </Component>
+  </SubComponents>
 </Form>

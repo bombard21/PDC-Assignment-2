@@ -1,4 +1,4 @@
-package airlineReservation;
+package AirlineTicketBookingCode;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package airlineReservation;
+package AirlineTicketBookingCode;
 
 public class SeatLayout {
     private final char LETTER = 'A';

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package AirlineTicketBookingSystem;
+package AirlineTicketBookingSystemGUI;
 
 /**
  *
@@ -33,7 +33,7 @@ public class User extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineTicketBookingSystem/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineTicketBookingSystemGUI/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
 
         bookingButton.setText("Booking");
         bookingButton.addActionListener(new java.awt.event.ActionListener() {
@@ -89,7 +89,9 @@ public class User extends javax.swing.JFrame {
     }//GEN-LAST:event_bookingButtonActionPerformed
 
     private void flightDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightDataButtonActionPerformed
-        
+        if(evt.getSource() == flightDataButton){
+            
+        }
     }//GEN-LAST:event_flightDataButtonActionPerformed
 
     private void ticketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketButtonActionPerformed

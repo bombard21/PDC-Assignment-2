@@ -1,0 +1,67 @@
+==============================
+First name: Jack
+Last name: Jills
+DOB: 03/01/2001
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: Tom
+Last name: Brady
+DOB: 03/01/1999
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: Tony
+Last name: Randal
+DOB: 03/01/2002
+Plane Choice: Airbus A330
+Chosen Destination: Dunedin
+============================================================
+First name: Jim
+Last name: Clark
+DOB: 03/09/2001
+Plane Choice: Airbus A330
+Chosen Destination: Dunedin
+============================================================
+First name: Jack
+Last name: Jillinhall
+DOB: 03/01/1920
+Plane Choice: Airbus A350
+Chosen Destination: Hamilton
+============================================================
+First name: Scott
+Last name: Gee
+DOB: 02/09/2008
+Plane Choice: Airbus A350
+Chosen Destination: Hamilton
+============================================================
+First name: Tony
+Last name: Cap
+DOB: 03/02/2001
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: ba
+Last name: ba
+DOB: 03/09/2010
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: John
+Last name: Marston
+DOB: 03/06/1942
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: bender
+Last name: bender
+DOB: 03/01/2001
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+============================================================
+First name: Jack
+Last name: Bill
+DOB: 03/09/2001
+Plane Choice: Airbus A320
+Chosen Destination: Hamilton
+==============================

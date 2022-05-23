@@ -1,0 +1,32 @@
+===========================================================
+Departure City: Auckland
+Arrival City: Hamilton
+Departure Time: 2AM
+Arrival Time: 4AM
+Flight Number: 22
+Flight Time: 2 hours
+===========================================================
+===========================================================
+Departure City: Auckland
+Arrival City: Hamilton
+Departure Time: 10AM
+Arrival Time: 12
+Flight Number: 9 5 2
+Flight Time: 2 hours
+===========================================================
+===========================================================
+Departure City: Auckland
+Arrival City: Hamilton
+Departure Time: 3AM
+Arrival Time: 5AM
+Flight Number: 6 7 4
+Flight Time: 2 hours
+===========================================================
+===========================================================
+Departure City: Auckland
+Arrival City: Hamilton
+Departure Time: 5AM
+Arrival Time: 7AM
+Flight Number: 4 2 5
+Flight Time: 2 hours
+===========================================================

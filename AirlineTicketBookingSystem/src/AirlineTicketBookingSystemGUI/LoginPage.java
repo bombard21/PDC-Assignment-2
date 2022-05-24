@@ -8,12 +8,14 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author wangx
  */
 public class LoginPage extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form HomePageGUI
      */

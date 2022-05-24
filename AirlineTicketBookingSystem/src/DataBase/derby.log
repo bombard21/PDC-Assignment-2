@@ -1,7 +1,7 @@
-Mon May 23 16:32:48 NZST 2022 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Tue May 24 12:48:43 NZST 2022 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
 ----------------------------------------------------------------
-Mon May 23 16:32:48 NZST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0180-ef30-671c-00003653e965 
+Tue May 24 12:48:52 NZST 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0180-f389-9ac5-00003653e965 
 on database directory E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase\DataBase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
 Loaded from file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/lib/db-derby-10.14.2.0-lib/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,26 +12,3 @@ os.arch=amd64
 os.version=10.0
 derby.system.home=E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon May 23 16:32:49 NZST 2022:
-Shutting down instance a816c00e-0180-ef30-671c-00003653e965 on database directory E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase\DataBase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
-Mon May 23 16:32:49 NZST 2022 Thread[DRDAConnThread_2,5,main] (DATABASE = DataBase), (DRDAID = {2}), Database 'DataBase' shutdown.
-----------------------------------------------------------------
-Mon May 23 16:32:52 NZST 2022:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance 6ede40af-0180-ef30-671c-00003653e965 
-on database directory E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase\DataBase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
-Loaded from file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/lib/db-derby-10.14.2.0-lib/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=16.0.1+9-24
-user.dir=E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\lib\db-derby-10.14.2.0-lib
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon May 23 18:31:20 NZST 2022: Shutting down Derby engine
-----------------------------------------------------------------
-Mon May 23 18:31:20 NZST 2022:
-Shutting down instance 6ede40af-0180-ef30-671c-00003653e965 on database directory E:\Uni 2022\GUI_BUILDER\AirlineTicketBookingSystem\src\DataBase\DataBase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
-----------------------------------------------------------------

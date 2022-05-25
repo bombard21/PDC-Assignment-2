@@ -124,8 +124,9 @@ public class Booking extends javax.swing.JFrame implements MouseListener{
     }// </editor-fold>//GEN-END:initComponents
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        // TODO add your handling code here:
-        
+        if(evt.getSource() == submitButton){
+            
+        }
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**

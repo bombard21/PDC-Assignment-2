@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class DBManager {
     private static final String USER_NAME = "pdc";
     private static final String PASSWORD = "pdc";
-    private static final String URL = "jdbc:derby://localhost:1527/DataBase; create=true;";
+    private static final String URL = "jdbc:derby:mydba;create=true";
     Connection connection;
     
     public DBManager(){
@@ -51,7 +51,4 @@ public class DBManager {
         DBManager manager = new DBManager();
         System.out.println(manager.getConnection());
     }
-    
-    
-    
 }

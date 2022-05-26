@@ -47,6 +47,8 @@ public class DBManager {
         return this.connection;
     }
     
+    
+    
     public static void main(String[] args){
         DBManager manager = new DBManager();
         System.out.println(manager.getConnection());

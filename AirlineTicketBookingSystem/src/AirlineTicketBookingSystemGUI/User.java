@@ -102,12 +102,15 @@ public class User extends javax.swing.JFrame {
 
     private void flightDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightDataButtonActionPerformed
         if(evt.getSource() == flightDataButton){
-            
+            flightData flightdata = new flightData();
         }
     }//GEN-LAST:event_flightDataButtonActionPerformed
 
     private void ticketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketButtonActionPerformed
         // TODO add your handling code here:
+        if(evt.getSource() == ticketButton){
+            ticket Ticket = new ticket();
+        }
     }//GEN-LAST:event_ticketButtonActionPerformed
 
     /**

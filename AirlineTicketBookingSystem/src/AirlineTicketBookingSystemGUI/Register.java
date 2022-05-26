@@ -4,17 +4,29 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author wangx
  */
 public class Register extends javax.swing.JFrame {
+    private final AirlineTicketBookingSystemGUI.DBManager dbmanager;
 
     /**
      * Creates new form Register
      */
-    public Register() {
+    public Register(DBManager dbmanager) {
         initComponents();
+        this.dbmanager = dbmanager;
+        
+    }
+
+    Register() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -121,6 +133,24 @@ public class Register extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton ){
             //save the user entered details to a database
+                        
+            String userName = username.getText();
+            String passWord = username.getText();
+            String Email = email.getText();            
+            Statement statement;
+            
+            try {
+                statement = dbmanager.connection.createStatement();
+                statement.executeUpdate("CREATE TABLE Register (UserName varchar(255),Pasword varchar(255), Email varchar(255)");
+                statement.executeUpdate("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
+                statement.setString(1,userName);
+                statement.setString(2,passWord);
+                statement.setString(3,Email);
+                dbmanager.connection.close();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+            }  
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 

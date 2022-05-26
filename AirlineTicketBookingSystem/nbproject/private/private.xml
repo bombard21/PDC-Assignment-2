@@ -4,11 +4,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/DBManager.java</file>
-            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/Register.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/ticket.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/User.java</file>
             <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/SeatPickerGUI.java</file>
             <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/LoginPage.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/Trip.java</file>
             <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/Booking.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/TripPlanner.java</file>
             <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/SeatOptionsGUI.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/setReservation.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/Register.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/UserQuestions.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/User.java</file>
+            <file>file:/E:/Uni%202022/GUI_BUILDER/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/flightData.java</file>
         </group>
     </open-files>
 </project-private>

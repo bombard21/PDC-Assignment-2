@@ -26,14 +26,13 @@ public class User extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         BookingButton = new javax.swing.JButton();
         flightDataButton = new javax.swing.JButton();
         ticketButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
+        getContentPane().setLayout(null);
 
         BookingButton.setText("Booking");
         BookingButton.addActionListener(new java.awt.event.ActionListener() {
@@ -41,6 +40,8 @@ public class User extends javax.swing.JFrame {
                 BookingButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BookingButton);
+        BookingButton.setBounds(640, 10, 79, 25);
 
         flightDataButton.setText("Flight Data");
         flightDataButton.addActionListener(new java.awt.event.ActionListener() {
@@ -48,6 +49,8 @@ public class User extends javax.swing.JFrame {
                 flightDataButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(flightDataButton);
+        flightDataButton.setBounds(730, 10, 91, 25);
 
         ticketButton.setText("Ticket");
         ticketButton.addActionListener(new java.awt.event.ActionListener() {
@@ -55,29 +58,12 @@ public class User extends javax.swing.JFrame {
                 ticketButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(ticketButton);
+        ticketButton.setBounds(830, 10, 65, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(BookingButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(flightDataButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ticketButton))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BookingButton)
-                    .addComponent(flightDataButton)
-                    .addComponent(ticketButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, -10, 900, 570);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

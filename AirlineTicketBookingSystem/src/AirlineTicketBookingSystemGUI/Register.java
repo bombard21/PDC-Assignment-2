@@ -133,21 +133,29 @@ public class Register extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton ){
             //save the user entered details to a database
-                        
+                    
             String userName = username.getText();
             String passWord = username.getText();
             String Email = email.getText();            
             Statement statement;
+
             
             try {
-                statement = dbmanager.connection.createStatement();
+                DatabaseMetaData dbm = dbmanager.connection.getMetaData();
+                ResultSet tables = dbm.getTables(null,null,"Register",null);
+                if(tables.next()){
+                    statement = dbmanager.connection.createStatement();
                 statement.executeUpdate("CREATE TABLE Register (UserName varchar(255),Pasword varchar(255), Email varchar(255)");
-                statement.executeUpdate("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
-                statement.setString(1,userName);
-                statement.setString(2,passWord);
-                statement.setString(3,Email);
-                dbmanager.connection.close();
+                }else{
+                     PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
+                pstmt.setString(1,userName);
+                pstmt.setString(2,passWord);
+                pstmt.setString(3,Email);
+                rs = pstmt.executeUpdate();
+                boolean re
                 
+                dbmanager.connection.close();
+                }
             } catch (SQLException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
             }  

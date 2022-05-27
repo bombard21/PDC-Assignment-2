@@ -12,8 +12,6 @@ import java.awt.event.MouseListener;
  * @author wangx
  */
 public class Booking extends javax.swing.JFrame implements MouseListener{
-    AirlineTicketBookingCode.Reservation reservation;
-    private int seatingPlan[][];
 
     /**
      * Creates new form Booking
@@ -125,6 +123,13 @@ public class Booking extends javax.swing.JFrame implements MouseListener{
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(evt.getSource() == submitButton){
+            String destination = destinationTextField.getText();
+            String dob = dobTextField.getText();
+            String firstName = firstNameTextField.getText();
+            String lastName = lastNameTextField.getText();
+            String passportNumber = passportNumberTextField.getText();
+            
+            
             
         }
     }//GEN-LAST:event_submitButtonActionPerformed

@@ -38,7 +38,7 @@ public class SeatChoice extends JFrame {
     private final DrawPanel drawPanel;
     
     /**
-     * Creates new form SeatOptionsGUI
+     * Creates new form SeatChoice
      */
     public SeatChoice() {
         initComponents();
@@ -46,9 +46,9 @@ public class SeatChoice extends JFrame {
         drawPanel.repaint();
         
         seating = new JButton[5][10];
-        for(int x = 0; x < seating.length; x++){
-            for(int y = 0; y < seating[x].length; y++){
-                seating[x][y] = new JButton();
+        for (JButton[] seating1 : seating) {
+            for (int y = 0; y < seating1.length; y++) {
+                seating1[y] = new JButton();
             }
         }
         super.add(drawPanel);
@@ -128,6 +128,7 @@ public class SeatChoice extends JFrame {
 
     /**
      * @param args the command line arguments
+     * @throws javax.swing.UnsupportedLookAndFeelException
      */
     public static void main(String args[]) throws UnsupportedLookAndFeelException {
         /* Set the Nimbus look and feel */
@@ -142,21 +143,17 @@ public class SeatChoice extends JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SeatOptionsGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SeatOptionsGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SeatOptionsGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SeatOptionsGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SeatChoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SeatOptionsGUI().setVisible(true);
+                new SeatChoice().setVisible(true);
             }
         });
     }

@@ -7,7 +7,6 @@ package AirlineTicketBookingSystemGUI;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
-import java.sql.*;
 
 
 /**

@@ -147,7 +147,7 @@ public class Register extends javax.swing.JFrame {
                     statement = dbmanager.connection.createStatement();
                 statement.executeUpdate("CREATE TABLE Register (UserName varchar(255),Pasword varchar(255), Email varchar(255)");
                 }else{
-                     PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
                 pstmt.setString(1,userName);
                 pstmt.setString(2,passWord);
                 pstmt.setString(3,Email);

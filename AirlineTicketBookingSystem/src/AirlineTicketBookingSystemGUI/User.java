@@ -11,7 +11,7 @@ package AirlineTicketBookingSystemGUI;
 public class User extends javax.swing.JFrame {
 
     /**
-     * Creates new form UserGUI
+     * Creates new form User
      */
     public User() {
         initComponents();
@@ -27,19 +27,18 @@ public class User extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        bookingButton = new javax.swing.JButton();
+        BookingButton = new javax.swing.JButton();
         flightDataButton = new javax.swing.JButton();
         ticketButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineTicketBookingSystemGUI/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineImages/airplane-plane-flight-900.jpg"))); // NOI18N
 
-        bookingButton.setText("Booking");
-        bookingButton.addActionListener(new java.awt.event.ActionListener() {
+        BookingButton.setText("Booking");
+        BookingButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bookingButtonActionPerformed(evt);
+                BookingButtonActionPerformed(evt);
             }
         });
 
@@ -57,52 +56,45 @@ public class User extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AirlineTicketBookingSystemImages/airplane-plane-flight-900.jpg"))); // NOI18N
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(bookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(flightDataButton)
-                .addGap(18, 18, 18)
-                .addComponent(ticketButton))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
+                .addComponent(BookingButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2))
+                .addComponent(flightDataButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ticketButton))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookingButton)
                     .addComponent(flightDataButton)
                     .addComponent(ticketButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 554, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void bookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookingButtonActionPerformed
-        if(evt.getSource() == bookingButton){
+    private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
+        // TODO add your handling code here:
+        if(evt.getSource()== BookingButton){
             Booking booking = new Booking();
+            booking.setVisible(true);
         }
-    }//GEN-LAST:event_bookingButtonActionPerformed
+    }//GEN-LAST:event_BookingButtonActionPerformed
 
     private void flightDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightDataButtonActionPerformed
-        if(evt.getSource() == flightDataButton){
+        // TODO add your handling code here:
+        if (evt.getSource() == flightDataButton){
             flightData flightdata = new flightData();
+            flightdata.setVisible(true);
         }
     }//GEN-LAST:event_flightDataButtonActionPerformed
 
@@ -110,6 +102,7 @@ public class User extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(evt.getSource() == ticketButton){
             ticket Ticket = new ticket();
+            Ticket.setVisible(true);
         }
     }//GEN-LAST:event_ticketButtonActionPerformed
 
@@ -139,7 +132,6 @@ public class User extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(User.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -150,10 +142,9 @@ public class User extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bookingButton;
+    private javax.swing.JButton BookingButton;
     private javax.swing.JButton flightDataButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton ticketButton;
     // End of variables declaration//GEN-END:variables
 }

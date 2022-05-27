@@ -8,11 +8,15 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.GroupLayout;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle;
 import javax.swing.UIManager;
@@ -25,11 +29,44 @@ import javax.swing.WindowConstants;
  */
 public class SeatChoice extends JFrame {
 
+    //varaible being declared
+    
+    private JLabel Prompt1;
+    private JLabel Prompt2;
+    private JTextField SeatChoice;
+    public JButton [][] seating;
+    private final DrawPanel drawPanel;
+    
     /**
      * Creates new form SeatOptionsGUI
      */
     public SeatChoice() {
         initComponents();
+        drawPanel = new DrawPanel();
+        drawPanel.repaint();
+        
+        seating = new JButton[5][10];
+        for(int x = 0; x < seating.length; x++){
+            for(int y = 0; y < seating[x].length; y++){
+                seating[x][y] = new JButton();
+            }
+        }
+        super.add(drawPanel);
+    }
+    
+    public class DrawPanel extends JPanel{
+        public DrawPanel(){
+            super.setPreferredSize(new Dimension(400,400));
+        }
+
+        protected void paintComponenet (Graphics g){
+            super.paintComponent(g);
+            for(int x = 0; x < seating.length; x++){
+                for(int y = 0; y < seating[x].length; y++){
+                    seating[x][y].setBounds(x*1, y*30, 30, 30);
+                }
+            }
+        }
     }
 
     /**
@@ -84,7 +121,9 @@ public class SeatChoice extends JFrame {
     }// </editor-fold>                        
 
     private void SeatChoiceActionPerformed(ActionEvent evt) {                                           
-        // TODO add your handling code here:
+        if(evt.getSource() == seating){
+            
+        }
     }                                          
 
     /**
@@ -122,10 +161,6 @@ public class SeatChoice extends JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
-    private JLabel Prompt1;
-    private JLabel Prompt2;
-    private JTextField SeatChoice;
-    // End of variables declaration                   
+             
 }
 

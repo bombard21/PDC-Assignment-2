@@ -151,8 +151,8 @@ public class Register extends javax.swing.JFrame {
                 pstmt.setString(1,userName);
                 pstmt.setString(2,passWord);
                 pstmt.setString(3,Email);
-                rs = pstmt.executeUpdate();
-                boolean re
+                pstmt.executeUpdate();
+                //
                 
                 dbmanager.connection.close();
                 }

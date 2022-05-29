@@ -8,7 +8,6 @@ import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -163,7 +162,7 @@ public class LoginPage extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
             String stringUserName = this.userName.getText();
-            String passWord = new String(this.password.getText());
+            String passWord = this.password.getText();
             Connection conn = dbmanager.getConnection();
 
             if(userName.equals("user") && passWord.equals("user")){
@@ -173,8 +172,7 @@ public class LoginPage extends javax.swing.JFrame {
                 pstmt.executeUpdate();
                 dbmanager.connection.close();
                 
-            }catch(Exception e){
-                e.printStackTrace();
+            }catch(SQLException e){
             }
                 close();
                 User user = new User();

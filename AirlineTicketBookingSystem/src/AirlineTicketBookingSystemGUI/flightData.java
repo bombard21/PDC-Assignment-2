@@ -27,7 +27,7 @@ public class flightData extends javax.swing.JFrame {
     private void initComponents() {
 
         planeidLabel = new javax.swing.JLabel();
-        idTextfield = new javax.swing.JTextField();
+        planeID = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTable = new javax.swing.JTable();
 
@@ -36,6 +36,12 @@ public class flightData extends javax.swing.JFrame {
         planeidLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         planeidLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         planeidLabel.setText("FlightNumber");
+
+        planeID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                planeIDActionPerformed(evt);
+            }
+        });
 
         dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -72,7 +78,7 @@ public class flightData extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(planeidLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(idTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(planeID, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -82,7 +88,7 @@ public class flightData extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(planeidLabel)
-                    .addComponent(idTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(planeID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -90,6 +96,12 @@ public class flightData extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void planeIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_planeIDActionPerformed
+        String plane = planeID.getText();
+        
+        
+    }//GEN-LAST:event_planeIDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,8 +140,8 @@ public class flightData extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable dataTable;
-    private javax.swing.JTextField idTextfield;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField planeID;
     private javax.swing.JLabel planeidLabel;
     // End of variables declaration//GEN-END:variables
 }

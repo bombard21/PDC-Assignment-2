@@ -12,7 +12,7 @@ import java.sql.SQLException;
  *
  * @author wangx
  */
-public class DBManager {
+public final class DBManager {
     private static final String USER_NAME = "pdc";
     private static final String PASSWORD = "pdc";
     private static final String URL = "jdbc:derby:mydba;create=true";

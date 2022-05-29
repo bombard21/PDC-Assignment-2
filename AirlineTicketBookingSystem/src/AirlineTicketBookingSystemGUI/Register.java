@@ -152,13 +152,16 @@ public class Register extends javax.swing.JFrame {
                 pstmt.setString(2,passWord);
                 pstmt.setString(3,Email);
                 pstmt.executeUpdate();
-                //
                 
                 dbmanager.connection.close();
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-            }  
+            }
+            dispose();
+            
+            LoginPage login = new LoginPage();
+            login.setVisible(true);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 
@@ -202,10 +205,8 @@ public class Register extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Register().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Register().setVisible(true);
         });
     }
 

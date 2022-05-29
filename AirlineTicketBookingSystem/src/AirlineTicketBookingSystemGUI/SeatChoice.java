@@ -8,6 +8,7 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -46,9 +47,12 @@ public class SeatChoice extends JFrame {
         drawPanel.repaint();
         
         seating = new JButton[5][10];
-        for (JButton[] seating1 : seating) {
-            for (int y = 0; y < seating1.length; y++) {
-                seating1[y] = new JButton();
+        for (int x = 0; x < seating.length; x++) {
+            for (int y = 0; y < seating[x].length; y++) {
+                seating[x][y] = new JButton();
+                seating[x][y].setBackground(Color.BLACK);
+                seating[x][y].setOpaque(true);
+                drawPanel.add(seating[x][y]);
             }
         }
         super.add(drawPanel);
@@ -151,10 +155,9 @@ public class SeatChoice extends JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SeatChoice().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            SeatChoice seatChoice = new SeatChoice();
+            seatChoice.setVisible(true);
         });
     }
 

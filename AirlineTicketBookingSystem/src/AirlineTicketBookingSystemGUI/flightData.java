@@ -29,7 +29,7 @@ public class flightData extends javax.swing.JFrame {
         planeidLabel = new javax.swing.JLabel();
         idTextfield = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        dataTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,7 +37,7 @@ public class flightData extends javax.swing.JFrame {
         planeidLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         planeidLabel.setText("FlightNumber");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        dataTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -60,7 +60,7 @@ public class flightData extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(dataTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,9 +127,9 @@ public class flightData extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable dataTable;
     private javax.swing.JTextField idTextfield;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel planeidLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,10 @@ package AirlineTicketBookingSystemGUI;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 
 /**
@@ -15,13 +19,20 @@ import javax.swing.JOptionPane;
  */
 public class LoginPage extends javax.swing.JFrame {
 
+    private final AirlineTicketBookingSystemGUI.DBManager dbmanager;
     
     /**
      * Creates new form HomePageGUI
      */
-    public LoginPage() {
+
+    private LoginPage(DBManager dbmanager) {
         initComponents();
-        
+        this.dbmanager = dbmanager;
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    LoginPage() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -151,16 +162,29 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
-            String userName = this.userName.getText();
+            String stringUserName = this.userName.getText();
             String passWord = new String(this.password.getText());
+            Connection conn = dbmanager.getConnection();
+
             if(userName.equals("user") && passWord.equals("user")){
                 JOptionPane.showMessageDialog(this,"Login Successful");
+                try{
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM userinfo WHERE Username='"+ stringUserName +"' AND Password= + '"+password.getText()+"'");
+                pstmt.executeUpdate();
+                dbmanager.connection.close();
+                
+            }catch(Exception e){
+                e.printStackTrace();
+            }
                 close();
                 User user = new User();
                 user.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(this,"Login Failed Please Try Again");
             }
+            
+            
+             
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 

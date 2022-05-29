@@ -169,7 +169,7 @@ public class LoginPage extends javax.swing.JFrame {
             if(userName.equals("user") && passWord.equals("user")){
                 JOptionPane.showMessageDialog(this,"Login Successful");
                 try{
-                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM userinfo WHERE Username='"+ stringUserName +"' AND Password= + '"+password.getText()+"'");
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM Register WHERE Username='"+ stringUserName +"' AND Password= + '"+password.getText()+"'");
                 pstmt.executeUpdate();
                 dbmanager.connection.close();
                 

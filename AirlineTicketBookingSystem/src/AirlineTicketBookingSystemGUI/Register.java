@@ -18,6 +18,7 @@ public class Register extends javax.swing.JFrame {
 
     /**
      * Creates new form Register
+     * @param dbmanager
      */
     public Register(DBManager dbmanager) {
         initComponents();
@@ -135,7 +136,7 @@ public class Register extends javax.swing.JFrame {
             //save the user entered details to a database
                     
             String userName = username.getText();
-            String passWord = username.getText();
+            String passWord = this.password.getText();
             String Email = email.getText();            
             Statement statement;
 
@@ -147,7 +148,7 @@ public class Register extends javax.swing.JFrame {
                     statement = dbmanager.connection.createStatement();
                 statement.executeUpdate("CREATE TABLE Register (UserName varchar(255),Pasword varchar(255), Email varchar(255)");
                 }else{
-                PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(username, password, email) VALUES (userName, passWord, Email)");
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(Username, Password, Email) VALUES (userName, passWord, Email)");
                 pstmt.setString(1,userName);
                 pstmt.setString(2,passWord);
                 pstmt.setString(3,Email);

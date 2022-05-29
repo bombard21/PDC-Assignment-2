@@ -37,7 +37,7 @@ public class SeatChoice extends JFrame {
     private JTextField SeatChoice;
     public JButton [][] seating;
     private final DrawPanel drawPanel;
-    
+    // TODO: check if the seats have been initialsed in the initComponenets
     /**
      * Creates new form SeatChoice
      */

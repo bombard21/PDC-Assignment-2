@@ -27,12 +27,13 @@ public class LoginPage extends javax.swing.JFrame {
     private LoginPage(DBManager dbmanager) {
         initComponents();
         this.dbmanager = dbmanager;
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     LoginPage() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -162,17 +163,16 @@ public class LoginPage extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
             String stringUserName = this.userName.getText();
-            String passWord = this.password.getText();
+            String stringPassword = this.password.getText();
             Connection conn = dbmanager.getConnection();
 
-            if(userName.equals("user") && passWord.equals("user")){
+            if(userName.equals("user") && password.equals("user")){
                 JOptionPane.showMessageDialog(this,"Login Successful");
                 try{
-                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM Register WHERE Username='"+ stringUserName +"' AND Password= + '"+password.getText()+"'");
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM Register WHERE Username='"+ stringUserName +"' AND Password= + '"+password+"'");
                 pstmt.executeUpdate();
                 dbmanager.connection.close();
-                
-            }catch(SQLException e){
+                }catch(SQLException e){
             }
                 close();
                 User user = new User();
@@ -224,6 +224,7 @@ public class LoginPage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                LoginPage login = new LoginPage();
                 new LoginPage().setVisible(true);
             }
         });

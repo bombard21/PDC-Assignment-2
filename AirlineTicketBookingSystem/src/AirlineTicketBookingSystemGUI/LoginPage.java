@@ -223,11 +223,11 @@ public class LoginPage extends javax.swing.JFrame {
     private javax.swing.JLabel LoginTitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
-    private javax.swing.JPasswordField password;
+    public javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JButton registerButton;
     private javax.swing.JCheckBox showPassword;
-    private javax.swing.JTextField userName;
+    public javax.swing.JTextField userName;
     private javax.swing.JLabel usernameLabel;
     // End of variables declaration//GEN-END:variables
 }

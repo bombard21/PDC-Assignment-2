@@ -5,7 +5,6 @@
 package dataBaseCode;
 
 
-import AirlineTicketBookingSystemGUI.Ticket;
 
 import javax.swing.*;
 import java.sql.*;
@@ -20,7 +19,7 @@ public class DBWriter {
     private AirlineTicketBookingSystemGUI.LoginPage loginPage;
     private AirlineTicketBookingSystemGUI.Register register;
     private AirlineTicketBookingSystemGUI.User user;
-    private Ticket ticket;
+    private AirlineTicketBookingSystemGUI.Ticket ticket;
     Connection connection;
     private DBManager dbmanager;
     Statement statement;
@@ -107,7 +106,42 @@ public class DBWriter {
         return false;
     }
 
-    public void addTicketData(){
+    public void bookingData(){
+        //grab the text from the text fields
+        //insert the data into the database
+        try{
+            String bookingfirstName = booking.firstNameTextField.getText();
+            String bookinglastName = booking.lastNameTextField.getText();
+            String bookingDOB = booking.dobTextField.getText();
 
+            if(!checkBookingDataExsistence(booking.firstNameTextField, booking.lastNameTextField, booking.dobTextField, booking.destinationTextField)){
+                PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO BookingData(FirstName, LastName, DOB) VALUES (?, ?, ?)");
+                pstmt.setString(1, bookingfirstName);
+                pstmt.setString(2, bookinglastName);
+                pstmt.setString(3, bookingDOB);
+            }
+
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+        }
     }
+
+    private boolean checkBookingDataExsistence(JTextField firstNameTextField, JTextField lastNameTextField, JTextField dobTextField, JTextField destinationTextField) {
+        //check if the data entered is already in the database
+        //if not, insert the data into the database
+        try{
+            String bookingfirstName = booking.firstNameTextField.getText();
+            String bookinglastName = booking.lastNameTextField.getText();
+            String bookingDOB = booking.dobTextField.getText();
+            ResultSet rs = statement.executeQuery("SELECT * FROM BookingData WHERE FirstName = '" + bookingfirstName + "' AND LastName = '" + bookinglastName + "' AND DOB = '" + bookingDOB + "'");
+            if(rs.next()){
+                return rs.getString("FirstName").equals(bookingfirstName) && rs.getString("LastName").equals(bookinglastName) && rs.getString("DOB").equals(bookingDOB);
+            }
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+        }
+        return false;
+    }
+
+
 }

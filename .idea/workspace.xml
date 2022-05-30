@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54e7dd7d-5f98-4dd4-a90b-c711af38fa86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AirlineTicketBookingSystem/src/dataBaseCode/DBWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/AirlineTicketBookingSystem/src/dataBaseCode/DBWriter.java" afterDir="false" />
-    </list>
+    <list default="true" id="54e7dd7d-5f98-4dd4-a90b-c711af38fa86" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +20,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/UniWork/PDC",
+    "last_opened_file_path": "E:/Uni 2022/GUI_BUILDER",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -40,6 +37,7 @@
       <workItem from="1653301864459" duration="9000" />
       <workItem from="1653886617321" duration="88000" />
       <workItem from="1653886722369" duration="147000" />
+      <workItem from="1653900509720" duration="678000" />
     </task>
     <servers />
   </component>

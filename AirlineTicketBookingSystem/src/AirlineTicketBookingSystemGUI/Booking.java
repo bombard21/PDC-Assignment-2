@@ -158,14 +158,14 @@ public class Booking extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextField destinationTextField;
-    private javax.swing.JTextField dobTextField;
-    private javax.swing.JTextField firstNameTextField;
+    public javax.swing.JTextField dobTextField;
+    public javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lastNameTextField;
+    public javax.swing.JTextField lastNameTextField;
     private javax.swing.JList<String> locationList;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables

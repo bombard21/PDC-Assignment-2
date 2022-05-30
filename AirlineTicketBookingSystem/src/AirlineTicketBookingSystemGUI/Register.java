@@ -4,6 +4,8 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBWriter;
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,10 +17,7 @@ import java.util.logging.Logger;
  */
 public class Register extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Register
-     * @param dbmanager
-     */
+
     public Register() {
         initComponents();        
     }
@@ -134,8 +133,9 @@ public class Register extends javax.swing.JFrame {
             String Email = email.getText();            
             Statement statement;
 
-            
-            LoginPage login = new LoginPage();
+
+            DBWriter db = new DBWriter();
+            LoginPage login = new LoginPage(db);
             login.setVisible(true);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
@@ -157,15 +157,15 @@ public class Register extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField email;
+    public javax.swing.JTextField email;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField password;
+    public javax.swing.JPasswordField password;
     private javax.swing.JPasswordField passwordConfirm;
     private javax.swing.JButton registerButton;
     private javax.swing.JCheckBox showPassword;
-    private javax.swing.JTextField username;
+    public javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

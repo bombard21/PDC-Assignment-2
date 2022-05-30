@@ -8,12 +8,12 @@ package AirlineTicketBookingSystemGUI;
  *
  * @author wangx
  */
-public class ticket extends javax.swing.JFrame {
+public class Ticket extends javax.swing.JFrame {
 
     /**
      * Creates new form ticket
      */
-    public ticket() {
+    public Ticket() {
         initComponents();
     }
 

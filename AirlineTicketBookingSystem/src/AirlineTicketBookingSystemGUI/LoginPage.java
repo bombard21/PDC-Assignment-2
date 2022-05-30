@@ -4,6 +4,8 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBWriter;
+
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import javax.swing.JOptionPane;
@@ -18,12 +20,15 @@ import java.sql.SQLException;
  */
 public class LoginPage extends javax.swing.JFrame {
 
+    private dataBaseCode.DBWriter dbWriter;
     
     /**
      * Creates new form HomePageGUI
      */
 
-    LoginPage() {
+    LoginPage(DBWriter dbWriter) {
+        this.dbWriter = dbWriter;
+
         initComponents();
     }
 
@@ -158,14 +163,9 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
-            if(userName.getText().equals("user") && password.getText().equals("user")){
-                JOptionPane.showMessageDialog(this,"Login Successful");
-                User user = new User();
-                user.setVisible(true);
-            }else{
-                JOptionPane.showMessageDialog(this,"Login Failed Please Try Again");
-            }
+            dbWriter.checkLoginData();
         }
+
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
@@ -204,10 +204,10 @@ public class LoginPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+        DBWriter dbWriter = new DBWriter();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                LoginPage loginpage = new LoginPage();
+                LoginPage loginpage = new LoginPage(dbWriter);
                 loginpage.setVisible(true);
             }
         });

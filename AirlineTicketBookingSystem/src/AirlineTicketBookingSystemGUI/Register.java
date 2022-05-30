@@ -14,21 +14,15 @@ import java.util.logging.Logger;
  * @author wangx
  */
 public class Register extends javax.swing.JFrame {
-    private final AirlineTicketBookingSystemGUI.DBManager dbmanager;
 
     /**
      * Creates new form Register
      * @param dbmanager
      */
-    public Register(DBManager dbmanager) {
-        initComponents();
-        this.dbmanager = dbmanager;
-        
+    public Register() {
+        initComponents();        
     }
 
-    Register() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -140,26 +134,6 @@ public class Register extends javax.swing.JFrame {
             String Email = email.getText();            
             Statement statement;
 
-            
-            try {
-                DatabaseMetaData dbm = dbmanager.connection.getMetaData();
-                ResultSet tables = dbm.getTables(null,null,"Register",null);
-                if(tables.next()){
-                    statement = dbmanager.connection.createStatement();
-                statement.executeUpdate("CREATE TABLE Register (UserName varchar(255),Pasword varchar(255), Email varchar(255)");
-                }else{
-                PreparedStatement pstmt = dbmanager.connection.prepareStatement("INSERT INTO Register(Username, Password, Email) VALUES ("+userName + passWord + Email + ")");
-                pstmt.setString(1,userName);
-                pstmt.setString(2,passWord);
-                pstmt.setString(3,Email);
-                pstmt.executeUpdate();
-                
-                dbmanager.connection.close();
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            dispose();
             
             LoginPage login = new LoginPage();
             login.setVisible(true);

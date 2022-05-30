@@ -18,20 +18,16 @@ import java.sql.SQLException;
  */
 public class LoginPage extends javax.swing.JFrame {
 
-    private final AirlineTicketBookingSystemGUI.DBManager dbmanager;
     
     /**
      * Creates new form HomePageGUI
      */
 
-    private LoginPage(DBManager dbmanager) {
+    LoginPage() {
         initComponents();
-        this.dbmanager = dbmanager;
     }
 
-    LoginPage() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
 
 
 
@@ -162,27 +158,13 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
-            String stringUserName = this.userName.getText();
-            String stringPassword = this.password.getText();
-            Connection conn = dbmanager.getConnection();
-
-            if(userName.equals("user") && password.equals("user")){
+            if(userName.getText().equals("user") && password.getText().equals("user")){
                 JOptionPane.showMessageDialog(this,"Login Successful");
-                try{
-                PreparedStatement pstmt = dbmanager.connection.prepareStatement("SELECT * FROM Register WHERE Username='"+ stringUserName +"' AND Password= + '"+password+"'");
-                pstmt.executeUpdate();
-                dbmanager.connection.close();
-                }catch(SQLException e){
-            }
-                close();
                 User user = new User();
                 user.setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(this,"Login Failed Please Try Again");
             }
-            
-            
-             
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
@@ -222,10 +204,11 @@ public class LoginPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                LoginPage login = new LoginPage();
-                new LoginPage().setVisible(true);
+                LoginPage loginpage = new LoginPage();
+                loginpage.setVisible(true);
             }
         });
     }

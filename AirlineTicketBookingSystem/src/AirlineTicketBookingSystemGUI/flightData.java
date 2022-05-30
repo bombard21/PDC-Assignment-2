@@ -11,20 +11,13 @@ package AirlineTicketBookingSystemGUI;
  */
 public class flightData extends javax.swing.JFrame {
 
-    private AirlineTicketBookingCode.Trip planeTrip;
-    private Booking booking;
     /**
      * Creates new form flightData
      */
-    public flightData(AirlineTicketBookingCode.Trip planeTrip, Booking booking) {
-        this.planeTrip = planeTrip;
-        this.booking = booking;
+    public flightData() {
         initComponents();
     }
 
-    flightData() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.

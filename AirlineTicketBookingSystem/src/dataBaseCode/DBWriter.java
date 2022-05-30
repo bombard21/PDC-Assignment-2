@@ -18,7 +18,6 @@ public class DBWriter {
     private AirlineTicketBookingSystemGUI.Booking booking;
     private AirlineTicketBookingSystemGUI.LoginPage loginPage;
     private AirlineTicketBookingSystemGUI.Register register;
-    private AirlineTicketBookingSystemGUI.User user;
     private AirlineTicketBookingSystemGUI.Ticket ticket;
     Connection connection;
     private DBManager dbmanager;
@@ -141,6 +140,10 @@ public class DBWriter {
             System.out.println("Error: " + e);
         }
         return false;
+    }
+
+    private void addTicketData(){
+
     }
 
 

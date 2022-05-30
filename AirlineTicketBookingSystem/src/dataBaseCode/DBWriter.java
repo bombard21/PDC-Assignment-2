@@ -42,7 +42,6 @@ public class DBWriter {
         //check if the data entered is already in the database
         try{
             String location = booking.destinationTextField.getText();
-
             ResultSet rs = statement.executeQuery("SELECT * FROM Location WHERE Places = '" + location + "'");
         }catch (Exception e){
             System.out.println("Error: " + e);

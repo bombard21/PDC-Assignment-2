@@ -164,6 +164,8 @@ public class LoginPage extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
             dbWriter.checkLoginData();
+            User user = new User();
+            user.setVisible(true);
         }
 
     }//GEN-LAST:event_loginButtonActionPerformed

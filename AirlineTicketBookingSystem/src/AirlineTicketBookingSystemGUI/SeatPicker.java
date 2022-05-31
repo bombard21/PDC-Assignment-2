@@ -1,12 +1,21 @@
 package AirlineTicketBookingSystemGUI;
 
+import AirlineTicketBookingCode.Column;
+import AirlineTicketBookingCode.Row;
+import AirlineTicketBookingCode.SeatLayout;
+import AirlineTicketBookingCode.setReservation;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import static AirlineTicketBookingCode.setReservation.ReservePlane;
+
+
 public class SeatPicker extends JFrame implements ActionListener {
 
+    public AirlineTicketBookingCode.Reservation reservation;
     //create a double array of JButtons
     private JButton[][] seats;
 
@@ -22,6 +31,8 @@ public class SeatPicker extends JFrame implements ActionListener {
 
 
     public SeatPicker() {
+        //create a new reservation
+        reservation = new AirlineTicketBookingCode.Reservation(new SeatLayout(10,5));
         //create a JPanel to ask the user to click on a seat
         JPanel promptPanel = new JPanel();
         promptPanel.setLayout(new FlowLayout());
@@ -29,11 +40,11 @@ public class SeatPicker extends JFrame implements ActionListener {
         promptPanel.add(prompt);
         //create a JPanel to hold the seats
         seatsPanel = new JPanel();
-        seatsPanel.setLayout(new GridLayout(5, 5));
+        seatsPanel.setLayout(new GridLayout(10, 5));
         //create a double array of JButtons
-        seats = new JButton[5][5];
+        seats = new JButton[10][5];
         //create a JPanel to hold the seats
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 5; j++) {
                 seats[i][j] = new JButton("" + (i * 5 + j + 1));
                 seats[i][j].addActionListener(this);
@@ -71,20 +82,19 @@ public class SeatPicker extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //when a button is pressed it will update the text field with the new seat number
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (e.getSource() == seats[i][j]) {
-                    seat.setText("" + (i * 5 + j + 1));
-                }
-            }
-        }
-
-        //when the user clicks on a seat, the seat will be disabled
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                if (e.getSource() == seats[i][j]) {
+        for(int i = 0; i < 10; i++) {
+            for(int j = 0; j < 5; j++) {
+                if(e.getSource() == seats[i][j]) {
+                    //disable the button
                     seats[i][j].setEnabled(false);
+                    //set the text of the text field
+                    seat.setText("" + (i * 5 + j + 1));
+
+                    boolean isReserved = reservation.reserveSeat(new Row(i), new Column((char) j));
+                    if (!isReserved) {
+                        ReservePlane();
+                    }
+                    System.out.println(reservation.reserveSeat(new Row(i), new Column((char) j)));
                 }
             }
         }
@@ -95,6 +105,11 @@ public class SeatPicker extends JFrame implements ActionListener {
         }
         
         
+    }
+
+    public static void main(String[] args) {
+        new SeatPicker();
+
     }
 
 }

@@ -7,6 +7,7 @@ package dataBaseCode;
 
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -14,7 +15,7 @@ import java.sql.SQLException;
  *
  * @author Xiaofeng Wang
  */
-public class DBWriter {
+public class DBWriter extends Component {
     private AirlineTicketBookingSystemGUI.Booking booking;
     private AirlineTicketBookingSystemGUI.LoginPage loginPage;
     private AirlineTicketBookingSystemGUI.Register register;
@@ -56,9 +57,8 @@ public class DBWriter {
             ResultSet rs = statement.executeQuery("SELECT * FROM RegisterData WHERE Username = '" + userUsername + "' AND Password = '" + userPassword + "'");
             if(rs.next()){
                 return true;
-
             }else if(!rs.next()){
-                JOptionPane.showMessageDialog(null, "You have not registered yet, please register");
+                JOptionPane.showMessageDialog(this, "You have not registered yet, please register");
             }
         }catch (Exception e){
             System.out.println("Error: " + e);

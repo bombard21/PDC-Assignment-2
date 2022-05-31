@@ -16,9 +16,11 @@ import java.util.logging.Logger;
  * @author wangx
  */
 public class Register extends javax.swing.JFrame {
+    private dataBaseCode.DBWriter dbw;
 
 
-    public Register() {
+    public Register(DBWriter dbw) {
+        this.dbw = dbw;
         initComponents();        
     }
 
@@ -126,17 +128,8 @@ public class Register extends javax.swing.JFrame {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton ){
-            //save the user entered details to a database
-                    
-            String userName = username.getText();
-            String passWord = this.password.getText();
-            String Email = email.getText();            
-            Statement statement;
+            dbw.addRegisterInputToDB();
 
-
-            DBWriter db = new DBWriter();
-            LoginPage login = new LoginPage(db);
-            login.setVisible(true);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 

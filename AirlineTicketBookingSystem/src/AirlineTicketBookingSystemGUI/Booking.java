@@ -128,23 +128,11 @@ public class Booking extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(evt.getSource() == submitButton){
-//            if(!firstNameTextField.getText().matches("[a-zA-Z]")){
-//                firstNameTextField.setText("");
-//                JOptionPane.showMessageDialog(this,"You have entered your first name incorrectly");
-//            }
-//            if(!lastNameTextField.getText().matches("[a-zA-Z]")){
-//                lastNameTextField.setText("");
-//                JOptionPane.showMessageDialog(this,"You have entered your last name incorrectly");
-//
-//            }
-//            if(!dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
-//                dobTextField.setText("");
-//                JOptionPane.showMessageDialog(this,"You have entered your DOB name incorrectly");
-//            }
-//            if(!destinationTextField.getText().equals(locationList.getSelectedValue())){
-//                destinationTextField.setText("");
-//                JOptionPane.showMessageDialog(this,"You have entered your location incorrectly");
-//            }
+            //check if all fields are filled in with valid data
+            if(firstNameTextField.getText().matches("[a-zA-Z]+") && lastNameTextField.getText().matches("[a-zA-Z]+") && dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}") && destinationTextField.getText().matches("[a-zA-Z]+")){
+
+            }
+
            
             
             SeatPicker seatPicker = new SeatPicker();

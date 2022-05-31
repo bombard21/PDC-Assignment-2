@@ -26,9 +26,8 @@ public class LoginPage extends javax.swing.JFrame {
      * Creates new form HomePageGUI
      */
 
-    LoginPage(DBWriter dbWriter) {
+    public LoginPage(DBWriter dbWriter) {
         this.dbWriter = dbWriter;
-
         initComponents();
     }
 
@@ -163,20 +162,21 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
-            dbWriter.checkLoginData();
-            User user = new User();
-            user.setVisible(true);
+            dbWriter.createRegisterDatabase();
+            dbWriter.checkLoginToRegister();
         }
 
     }//GEN-LAST:event_loginButtonActionPerformed
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton){
-            Register register = new Register();
+            Register register = new Register(dbWriter);
             register.setVisible(true);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 
+
+    public static LoginPage loginpage;
     /**
      * @param args the command line arguments
      */
@@ -207,10 +207,12 @@ public class LoginPage extends javax.swing.JFrame {
 
         /* Create and display the form */
         DBWriter dbWriter = new DBWriter();
+
+        loginpage = new LoginPage(dbWriter);
+        loginpage.setVisible(true);
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                LoginPage loginpage = new LoginPage(dbWriter);
-                loginpage.setVisible(true);
+
             }
         });
     }

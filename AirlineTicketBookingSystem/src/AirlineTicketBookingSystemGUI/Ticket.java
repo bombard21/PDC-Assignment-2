@@ -6,10 +6,6 @@ package AirlineTicketBookingSystemGUI;
 
 import AirlineTicketBookingCode.Trip;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Set;
-
 /**
  *
  * @author wangx
@@ -25,40 +21,45 @@ public class Ticket extends javax.swing.JFrame{
      * Creates new form ticket
      */
     public Ticket() {
+        seatPicker = new SeatPicker();
         trip = new Trip();
         initComponents();
-        Name.setText(userQuestions.booking.firstNameTextField.getText() + userQuestions.booking.lastNameTextField.getText());
+        Name.setText(userQuestions.booking.firstNameTextField.getText() +" "+ userQuestions.booking.lastNameTextField.getText());
         arrivalDestination.setText(userQuestions.booking.destinationTextField.getText());
         departure.setEditable(false);
         flightNumber.setText(trip.createFlightNumber());
         boardingTime.setText(trip.createDepartureTime());
         gate.setText(trip.createGateNumber());
         date.setText(trip.createDepatureDate());
-        if(userQuestions.booking.equals(userQuestions.booking.locationList.getSelectedValue())){
-            if(userQuestions.booking.locationList.getSelectedValue().equals("Hamilton")){
+        seatNumber.setText(seatPicker.getSeatNumber());
+
+        switch (userQuestions.booking.destinationTextField.getText()) {
+            case "Hamilton":
                 time.setText("2 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Queenstown")){
+            case "QueensTown":
                 time.setText("3 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Christchurch")){
+            case "Christchurch":
                 time.setText("4 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Rotorua")){
+            case "Rotorua":
+                time.setText("5 hours");
+            case "Wellington":
+                time.setText("6 hours");
+            case "Tauranga":
                 time.setText("2 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Wellington")){
-                time.setText("3 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Tauranga")){
-                time.setText("2 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Stewart Islands")){
-                time.setText("3 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Dunedin")){
+            case "Stewart Island":
+                time.setText("6 hours");
+            case "Dunedin":
+                time.setText("7 hours");
+            case "Palmerston North":
                 time.setText("4 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Palmerston North")){
+            case "Whangarei":
                 time.setText("2 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Whangarei")){
-                time.setText("3 hours");
-            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Kaitaia")){
-                time.setText("2 hours");
-            }
+            case "Kaitaia":
+                time.setText("1 hours");
+            default:
+                time.setText("1 hour");
         }
+
     }
 
     /**
@@ -190,13 +191,13 @@ public class Ticket extends javax.swing.JFrame{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Name;
-    private javax.swing.JTextField arrivalDestination;
-    private javax.swing.JTextField boardingTime;
-    private javax.swing.JTextField date;
-    private javax.swing.JTextField departure;
-    private javax.swing.JTextField flightNumber;
-    private javax.swing.JTextField gate;
+    public javax.swing.JTextField Name;
+    public javax.swing.JTextField arrivalDestination;
+    public javax.swing.JTextField boardingTime;
+    public javax.swing.JTextField date;
+    public javax.swing.JTextField departure;
+    public javax.swing.JTextField flightNumber;
+    public javax.swing.JTextField gate;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -206,8 +207,8 @@ public class Ticket extends javax.swing.JFrame{
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField seatNumber;
-    private javax.swing.JTextField time;
+    public javax.swing.JTextField seatNumber;
+    public javax.swing.JTextField time;
     // End of variables declaration//GEN-END:variables
 
 }

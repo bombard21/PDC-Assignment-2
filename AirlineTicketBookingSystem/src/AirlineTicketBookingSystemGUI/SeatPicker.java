@@ -25,7 +25,7 @@ public class SeatPicker extends JFrame implements ActionListener {
     private JLabel prompt;
     private JLabel prompt2;
     //create a text field for the selected seat
-    private JTextField seat;
+    public static JTextField seat;
     private JButton confirm;
 
 
@@ -108,5 +108,8 @@ public class SeatPicker extends JFrame implements ActionListener {
     }
 
 
+    public String getSeatNumber() {
+        return seat.getText();
+    }
 }
 

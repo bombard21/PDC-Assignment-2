@@ -112,37 +112,6 @@ public class DBWriter extends Component {
             System.out.println("ur details are being fucking added calm down");
         }
     }
-
-    public void createLocationDatabase() {
-        try {
-            //if the database does not exist, then create it
-            if (!checkLocationDatabaseExsistence()) {
-                statement.executeUpdate("CREATE TABLE LocationData(LocationName VARCHAR(255)");
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
-            System.out.println("database already exists");
-        }
-
-    }
-
-    public boolean checkLocationDatabaseExsistence() {
-        try {
-            String sql = "SELECT * FROM LocationData";
-            ResultSet rs = statement.executeQuery(sql);
-            if (rs.next()) {
-                return true;
-            }
-        } catch (Exception e) {
-            System.out.println("Error: " + e);
-            System.out.println("database does not exist yet");
-        }
-        return false;
-    }
-
-    public void addLocationsToDatabase(){
-        
-    }
 }
 
 

@@ -9,7 +9,7 @@ public class ReserverationApp {
 
         setReservation.setReservation();
         User user = new User();
-        Trip trip = new Trip(user);
+        Trip trip = new Trip();
         Login login = new Login(user);
         Scanner input = new Scanner(System.in);
 

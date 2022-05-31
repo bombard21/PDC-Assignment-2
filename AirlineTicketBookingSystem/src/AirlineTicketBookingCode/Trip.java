@@ -8,47 +8,56 @@ import java.util.*;
 
 public class Trip implements TripPlanner{
     private final Random rand = new Random();
-    private final User user;
+//    public static User user;
     private String arrivalCity;
     private int departureTime;
     private int arrivalTime;
     private String flightNumber;
     private String flightTime;
+    private String gateNumber;
+
+    private String departureDate;
 
 
-    public Trip(User user) {
-        this.user = user;
+    public Trip() {
+//        user =
+//        this.user = user;
     }
 
     //give flight time from auckland to different locations
-    public int planeFlightTime(String arrivalCity) {
-        /** Hamilton, QueensTown, Christchurch, Rotorua,Wellington, Dunedin, Kaitai, Tauranga, Stewart Island, Palmeston North, Whangerai*/
-        int flightTime = 0;
-
-        if (user.getArrivalCity().equalsIgnoreCase("Hamilton")) {
-            flightTime= 2;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Wellington") || user.getArrivalCity().equalsIgnoreCase("Dunedin") || user.getArrivalCity().equalsIgnoreCase("Kaitaia")) {
-            flightTime= 3;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Queenstown")) {
-            flightTime= 5;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Christchurch")) {
-            flightTime= 5;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Rotorua")) {
-            flightTime= 1;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Tauranga")) {
-            flightTime= 2;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Stewart Island")) {
-            flightTime= 6;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Palmerston North")) {
-            flightTime= 3;
-        } else if (user.getArrivalCity().equalsIgnoreCase("Whangarei")) {
-            flightTime= 1;
-        }
-        return flightTime;
-    }
+//    public int planeFlightTime(String arrivalCity) {
+//        /** Hamilton, QueensTown, Christchurch, Rotorua,Wellington, Dunedin, Kaitai, Tauranga, Stewart Island, Palmeston North, Whangerai*/
+//        int flightTime = 0;
+//
+//        if (user.getArrivalCity().equalsIgnoreCase("Hamilton")) {
+//            flightTime= 2;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Wellington") || user.getArrivalCity().equalsIgnoreCase("Dunedin") || user.getArrivalCity().equalsIgnoreCase("Kaitaia")) {
+//            flightTime= 3;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Queenstown")) {
+//            flightTime= 5;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Christchurch")) {
+//            flightTime= 5;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Rotorua")) {
+//            flightTime= 1;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Tauranga")) {
+//            flightTime= 2;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Stewart Island")) {
+//            flightTime= 6;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Palmerston North")) {
+//            flightTime= 3;
+//        } else if (user.getArrivalCity().equalsIgnoreCase("Whangarei")) {
+//            flightTime= 1;
+//        }
+//        return flightTime;
+//    }
 
 
     //set the arrival city to what the user inputs in the User Class
+
+    @Override
+    public int planeFlightTime(String arrivalCity) {
+        return 0;
+    }
 
     //generates a random time stamp in a 13-hour format for departure time
     public String createDepartureTime() {
@@ -95,32 +104,44 @@ public class Trip implements TripPlanner{
         return this.flightNumber = flightNumber + " " + flightNumber2 + " " + flightNumber3;
     }
 
+    @Override
+    public String createGateNumber() {
+        return this.gateNumber = "Gate " + rand.nextInt(9) + 1;
+    }
+
+    @Override
+    public String createDepatureDate() {
+        return this.departureDate = "Departure Date: " + rand.nextInt(30) + "/" + rand.nextInt(12) + "/" + rand.nextInt(20) + " " + rand.nextInt(12) + ":" + rand.nextInt(59);
+    }
+
 
     /**
      * This function is used to display the flight details of the user's trip
      */
     public void displayTrip() throws IOException {
-        FileWriter fileWriter = new FileWriter("./Resource/Flightdata.txt",true);
-        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        ArrayList<String> flightData = new ArrayList<>();
-
-        flightData.add("===========================================================");
-        flightData.add("Departure City: Auckland");
-        flightData.add("Arrival City: " + user.getArrivalCity());
-        flightData.add("Departure Time: " + createDepartureTime());
-        flightData.add("Arrival Time: " + setArrivalTime());
-        flightData.add("Flight Number: " + createFlightNumber());
-        flightData.add("Flight Time: " + planeFlightTime(user.getArrivalCity()) + " hours");
-        flightData.add("===========================================================");
-        try {
-            for (String FlightData : flightData) {
-                bufferedWriter.append(FlightData + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        bufferedWriter.close();
+//        FileWriter fileWriter = new FileWriter("./Resource/Flightdata.txt",true);
+//        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//        ArrayList<String> flightData = new ArrayList<>();
+//
+//        flightData.add("===========================================================");
+//        flightData.add("Departure City: Auckland");
+//        flightData.add("Arrival City: " + user.getArrivalCity());
+//        flightData.add("Departure Time: " + createDepartureTime());
+//        flightData.add("Arrival Time: " + setArrivalTime());
+//        flightData.add("Flight Number: " + createFlightNumber());
+//        flightData.add("Flight Time: " + planeFlightTime(user.getArrivalCity()) + " hours");
+//        flightData.add("===========================================================");
+//        try {
+//            for (String FlightData : flightData) {
+//                bufferedWriter.append(FlightData + "\n");
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        bufferedWriter.close();
     }
+    
+    
 
 }
 

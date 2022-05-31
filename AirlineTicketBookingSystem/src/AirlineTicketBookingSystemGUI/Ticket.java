@@ -4,24 +4,61 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import AirlineTicketBookingCode.Trip;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Set;
 
 /**
  *
  * @author wangx
  */
-public class Ticket extends javax.swing.JFrame implements ActionListener{
+public class Ticket extends javax.swing.JFrame{
 
     private SeatPicker seatPicker;
-    private AirlineTicketBookingCode.Trip trip;
+    private User user;
+    private Trip trip;
     
 
     /**
      * Creates new form ticket
      */
     public Ticket() {
+        trip = new Trip();
         initComponents();
+        Name.setText(userQuestions.booking.firstNameTextField.getText() + userQuestions.booking.lastNameTextField.getText());
+        arrivalDestination.setText(userQuestions.booking.destinationTextField.getText());
+        departure.setEditable(false);
+        flightNumber.setText(trip.createFlightNumber());
+        boardingTime.setText(trip.createDepartureTime());
+        gate.setText(trip.createGateNumber());
+        date.setText(trip.createDepatureDate());
+        if(userQuestions.booking.equals(userQuestions.booking.locationList.getSelectedValue())){
+            if(userQuestions.booking.locationList.getSelectedValue().equals("Hamilton")){
+                time.setText("2 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Queenstown")){
+                time.setText("3 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Christchurch")){
+                time.setText("4 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Rotorua")){
+                time.setText("2 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Wellington")){
+                time.setText("3 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Tauranga")){
+                time.setText("2 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Stewart Islands")){
+                time.setText("3 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Dunedin")){
+                time.setText("4 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Palmerston North")){
+                time.setText("2 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Whangarei")){
+                time.setText("3 hours");
+            }else if(userQuestions.booking.locationList.getSelectedValue().equals("Kaitaia")){
+                time.setText("2 hours");
+            }
+        }
     }
 
     /**
@@ -173,13 +210,4 @@ public class Ticket extends javax.swing.JFrame implements ActionListener{
     private javax.swing.JTextField time;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Name.setText(userQuestions.booking.firstNameTextField.getText() + userQuestions.booking.lastNameTextField.getText());
-        arrivalDestination.setText(userQuestions.booking.destinationTextField.getText());
-        departure.setEditable(false);
-        flightNumber.setText(trip.createFlightNumber());
-        
-        
-    }
 }

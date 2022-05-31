@@ -17,7 +17,7 @@ public class SeatPicker extends JFrame implements ActionListener {
 
     public AirlineTicketBookingCode.Reservation reservation;
     //create a double array of JButtons
-    private JButton[][] seats;
+    JButton[][] seats;
 
     //create a JPanel to hold the seats
     private JPanel seatsPanel;
@@ -107,10 +107,6 @@ public class SeatPicker extends JFrame implements ActionListener {
         
     }
 
-    public static void main(String[] args) {
-        new SeatPicker();
-
-    }
 
 }
 

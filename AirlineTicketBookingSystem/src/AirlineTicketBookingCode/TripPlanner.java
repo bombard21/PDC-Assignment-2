@@ -8,6 +8,8 @@ public interface TripPlanner {
     String setArrivalTime();
     String timeOfDay(int time);
     String createFlightNumber();
+    String createGateNumber();
+    String createDepatureDate();
     void displayTrip() throws IOException;
 
 }

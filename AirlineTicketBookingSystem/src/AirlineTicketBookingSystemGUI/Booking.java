@@ -128,23 +128,23 @@ public class Booking extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(evt.getSource() == submitButton){
-            if(!firstNameTextField.getText().matches("[a-zA-Z]")){
-                firstNameTextField.setText("");
-                JOptionPane.showMessageDialog(this,"You have entered your first name incorrectly");
-            }
-            if(!lastNameTextField.getText().matches("[a-zA-Z]")){
-                lastNameTextField.setText("");
-                JOptionPane.showMessageDialog(this,"You have entered your last name incorrectly");
-
-            }
-            if(!dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
-                dobTextField.setText("");
-                JOptionPane.showMessageDialog(this,"You have entered your DOB name incorrectly");
-            }
-            if(!destinationTextField.getText().equals(locationList.getSelectedValue())){
-                destinationTextField.setText("");
-                JOptionPane.showMessageDialog(this,"You have entered your location incorrectly");
-            }
+//            if(!firstNameTextField.getText().matches("[a-zA-Z]")){
+//                firstNameTextField.setText("");
+//                JOptionPane.showMessageDialog(this,"You have entered your first name incorrectly");
+//            }
+//            if(!lastNameTextField.getText().matches("[a-zA-Z]")){
+//                lastNameTextField.setText("");
+//                JOptionPane.showMessageDialog(this,"You have entered your last name incorrectly");
+//
+//            }
+//            if(!dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
+//                dobTextField.setText("");
+//                JOptionPane.showMessageDialog(this,"You have entered your DOB name incorrectly");
+//            }
+//            if(!destinationTextField.getText().equals(locationList.getSelectedValue())){
+//                destinationTextField.setText("");
+//                JOptionPane.showMessageDialog(this,"You have entered your location incorrectly");
+//            }
            
             
             SeatPicker seatPicker = new SeatPicker();
@@ -166,7 +166,7 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTextField lastNameTextField;
-    private javax.swing.JList<String> locationList;
+    public javax.swing.JList<String> locationList;
     private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 

@@ -4,11 +4,16 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author wangx
  */
-public class Ticket extends javax.swing.JFrame {
+public class Ticket extends javax.swing.JFrame{
+
+    private Booking booking;
+    private SeatPicker seatPicker;
 
     /**
      * Creates new form ticket
@@ -147,6 +152,7 @@ public class Ticket extends javax.swing.JFrame {
 
     private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_dateActionPerformed
 
     /**

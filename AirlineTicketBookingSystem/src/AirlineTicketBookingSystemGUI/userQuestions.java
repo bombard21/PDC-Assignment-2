@@ -15,6 +15,8 @@ public class userQuestions extends javax.swing.JFrame {
     /**
      * Creates new form userQuestions
      */
+    
+    public static Booking booking;
     public userQuestions() {
         initComponents();
     }
@@ -82,7 +84,7 @@ public class userQuestions extends javax.swing.JFrame {
         }else if(numberOfPassengers.getText().matches("[0-9]*") && Integer.parseInt(numberOfPassengers.getText()) <= 10){
             JOptionPane.showMessageDialog(this,"The input is Correct");
             if(evt.getSource() == submitButton){
-            Booking booking = new Booking();
+            booking = new Booking();
             booking.setVisible(true);
             }
         }

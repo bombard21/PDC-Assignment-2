@@ -4,6 +4,8 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBWriter;
+
 /**
  *
  * @author wangx
@@ -112,7 +114,7 @@ public class User extends javax.swing.JFrame {
     private void ticketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketButtonActionPerformed
         // TODO add your handling code here:
         if(evt.getSource() == ticketButton){
-            Ticket Ticket = new Ticket();
+            Ticket Ticket = new Ticket(new DBWriter());
             Ticket.setVisible(true);
         }
     }//GEN-LAST:event_ticketButtonActionPerformed

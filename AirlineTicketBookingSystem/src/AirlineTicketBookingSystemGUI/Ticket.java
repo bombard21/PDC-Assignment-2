@@ -5,6 +5,9 @@
 package AirlineTicketBookingSystemGUI;
 
 import AirlineTicketBookingCode.Trip;
+import dataBaseCode.DBWriter;
+
+import javax.swing.*;
 
 /**
  *
@@ -16,14 +19,19 @@ public class Ticket extends javax.swing.JFrame{
     public static User user;
     public static Ticket ticket;
     private Trip trip;
+    private DBWriter dbWriter;
     
 
     /**
      * Creates new form ticket
      */
-    public Ticket() {
+    public Ticket(DBWriter dbWriter) {
         initComponents();
-        
+        this.dbWriter = dbWriter;
+
+        dbWriter.createTicketDatabase();
+        dbWriter.addTicketData();
+
 
     }
 
@@ -80,6 +88,11 @@ public class Ticket extends javax.swing.JFrame{
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
+
+        if(evt.getSource() == searchButton){
+            dbWriter.searchTicketDatabase();
+        }
+
     }//GEN-LAST:event_searchButtonActionPerformed
 
     /**
@@ -88,8 +101,8 @@ public class Ticket extends javax.swing.JFrame{
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    public javax.swing.JTextField jTextField1;
+    public javax.swing.JTextField jTextField2;
     private javax.swing.JButton searchButton;
     // End of variables declaration//GEN-END:variables
 

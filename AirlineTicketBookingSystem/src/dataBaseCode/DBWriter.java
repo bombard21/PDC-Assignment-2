@@ -6,11 +6,8 @@ package dataBaseCode;
 
 
 
-import AirlineTicketBookingSystemGUI.LoginPage;
-import AirlineTicketBookingSystemGUI.Register;
-import AirlineTicketBookingSystemGUI.User;
-import AirlineTicketBookingSystemGUI.Booking;
-import AirlineTicketBookingSystemGUI.Ticket;
+import AirlineTicketBookingSystemGUI.*;
+import AirlineTicketBookingCode.Trip;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,6 +23,8 @@ import java.sql.SQLException;
 public class DBWriter extends Component {
 //    private AirlineTicketBookingSystemGUI.Booking booking;
 //    private AirlineTicketBookingSystemGUI.Ticket ticket;
+
+    private AirlineTicketBookingCode.Trip trip;
     Connection connection;
     private DBManager dbmanager;
     Statement statement;
@@ -174,16 +173,41 @@ public class DBWriter extends Component {
 
     public void addTicketData(){
         try{
+            String flightNumber = trip.createFlightNumber();
+            String boardingTime = trip.createDepartureTime();
+            String gate = trip.createGateNumber();
+            String flightTime = trip.setArrivalTime();
             String name = Booking.booking.firstNameTextField.getText() + Booking.booking.lastNameTextField.getText();
-            String arrivalDestination = Booking.booking.destinationTextField.getText();
+            String destination = Booking.booking.destinationTextField.getText();
 
-//            String sql = "INSERT INTO TicketData (Name, ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + name + "', '" + arrivalDestination + "', '" + departure + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "', '" + date + "', '" + seatNumber + "')";
-//            System.out.println(sql);
-//            statement.executeUpdate(sql);
+            String sql = "INSERT INTO TicketData (name, ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + name + "', '" + destination + "', '" + flightTime + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "')";
+            System.out.println(sql);
+            statement.executeUpdate(sql);
         }catch (Exception e){
             System.out.println("Error: " + e);
         }
     }
+
+    public void searchTicketDatabase(){
+        try{
+            String nameID = Ticket.ticket.jTextField1.getText();
+            String sql = "SELECT * FROM TicketData WHERE Name = '" + nameID + "'";
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()){
+                Ticket.ticket.jTextField2.setText(rs.getString("Name"));
+                Ticket.ticket.jTextField2.setText(rs.getString("ArrivalDestination"));
+                Ticket.ticket.jTextField2.setText(rs.getString("Departure"));
+                Ticket.ticket.jTextField2.setText(rs.getString("FlightNumber"));
+                Ticket.ticket.jTextField2.setText(rs.getString("BoardingTime"));
+                Ticket.ticket.jTextField2.setText(rs.getString("Gate"));
+                Ticket.ticket.jTextField2.setText(rs.getString("Date"));
+                Ticket.ticket.jTextField2.setText(rs.getString("SeatNumber"));
+            }
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+        }
+    }
+
 }
 
 

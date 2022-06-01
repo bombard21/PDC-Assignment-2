@@ -133,21 +133,25 @@ public class Booking extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(evt.getSource() == submitButton){
             //check if all fields are filled in with valid data
-            if(firstNameTextField.getText().matches("[a-zA-Z]+")){
-                if(lastNameTextField.getText().matches("[a-zA-Z]+")){
-                    if(dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
-                        if(destinationTextField.getText().matches("[a-zA-Z]+") && destinationTextField.getText().equals(locationList)){
-                            SeatPicker seatPicker = new SeatPicker();
-                            seatPicker.setVisible(true);
-                        }
-                    }
-                }
+            if(!firstNameTextField.getText().matches("[a-zA-Z]+")){
+                JOptionPane.showMessageDialog(this,"Please enter a valid first name");
+                firstNameTextField.setText("");
+            }else if(!lastNameTextField.getText().matches("[a-zA-Z]+")){
+                JOptionPane.showMessageDialog(this,"Please enter a valid last name");
+                lastNameTextField.setText("");
+            }else if(!dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
+                JOptionPane.showMessageDialog(this,"Please enter a valid date of birth");
+                dobTextField.setText("");
+            }else if(!destinationTextField.getText().matches("[a-zA-Z]+") && !destinationTextField.getText().equals(locationList)){
+                JOptionPane.showMessageDialog(this,"Please enter a valid destination");
+                destinationTextField.setText("");
             }
 
-
-           
-            
-
+            //if all the fields are valid
+            else{
+                SeatPicker sp = new SeatPicker();
+                sp.setVisible(true);
+            }
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 

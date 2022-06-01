@@ -10,6 +10,7 @@ import AirlineTicketBookingSystemGUI.LoginPage;
 import AirlineTicketBookingSystemGUI.Register;
 import AirlineTicketBookingSystemGUI.User;
 import AirlineTicketBookingSystemGUI.Booking;
+import AirlineTicketBookingSystemGUI.Ticket;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +25,7 @@ import java.sql.SQLException;
  */
 public class DBWriter extends Component {
 //    private AirlineTicketBookingSystemGUI.Booking booking;
-    private AirlineTicketBookingSystemGUI.Ticket ticket;
+//    private AirlineTicketBookingSystemGUI.Ticket ticket;
     Connection connection;
     private DBManager dbmanager;
     Statement statement;
@@ -140,6 +141,43 @@ public class DBWriter extends Component {
             String destination = Booking.booking.destinationTextField.getText();
             String dob = Booking.booking.dobTextField.getText();
             String sql = "INSERT INTO BookingData (Name, Destination, DOB) VALUES ('" + name + "', '" + destination + "', '" + dob + "')";
+            System.out.println(sql);
+            statement.executeUpdate(sql);
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public void createTicketDatabase(){
+        try{
+            if (!checkTicketDatabaseExsistence()){
+                statement.executeUpdate("CREATE TABLE TicketData(Name varchar(255), ArrivalDestination varchar(255), Departure varchar(255), FlightNumber varchar(255), BoardingTime varchar(255), Gate varchar(255), Date date, SeatNumber varchar(255))");
+            }
+        }catch (Exception e){
+            System.out.println("Error: " + e);
+            System.out.println("database already");
+        }
+    }
+
+    private boolean checkTicketDatabaseExsistence() {
+        //check if the database exists
+        try {
+            ResultSet rs = statement.executeQuery("SELECT * FROM TicketData");
+            if (rs.next()) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+        return false;
+    }
+
+    public void addTicketData(){
+        try{
+            String name = Booking.booking.firstNameTextField.getText() + Booking.booking.lastNameTextField.getText();
+            String arrivalDestination = Booking.booking.destinationTextField.getText();
+
+            String sql = "INSERT INTO TicketData (Name, ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + name + "', '" + arrivalDestination + "', '" + departure + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "', '" + date + "', '" + seatNumber + "')";
             System.out.println(sql);
             statement.executeUpdate(sql);
         }catch (Exception e){

@@ -12,8 +12,9 @@ import AirlineTicketBookingCode.Trip;
  */
 public class Ticket extends javax.swing.JFrame{
 
-    private SeatPicker seatPicker;
-    private User user;
+    public static SeatPicker seatPicker;
+    public static User user;
+    public static Ticket ticket;
     private Trip trip;
     
 
@@ -21,10 +22,9 @@ public class Ticket extends javax.swing.JFrame{
      * Creates new form ticket
      */
     public Ticket() {
-        seatPicker = new SeatPicker();
         trip = new Trip();
         initComponents();
-        Name.setText(userQuestions.booking.firstNameTextField.getText() +" "+ userQuestions.booking.lastNameTextField.getText());
+        Name.setText(userQuestions.userQuestions.booking.firstNameTextField.getText() + " " + userQuestions.userQuestions.booking.lastNameTextField.getText());
         arrivalDestination.setText(userQuestions.booking.destinationTextField.getText());
         departure.setEditable(false);
         flightNumber.setText(trip.createFlightNumber());

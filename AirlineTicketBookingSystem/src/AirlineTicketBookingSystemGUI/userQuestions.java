@@ -17,7 +17,7 @@ public class userQuestions extends javax.swing.JFrame {
     /**
      * Creates new form userQuestions
      */
-    
+    public static userQuestions userQuestions;
     public static Booking booking;
     public userQuestions() {
         initComponents();
@@ -90,9 +90,6 @@ public class userQuestions extends javax.swing.JFrame {
             Booking.booking.setVisible(true);
             }
         }
-        
-
-            
     }//GEN-LAST:event_submitButtonActionPerformed
 
     /**

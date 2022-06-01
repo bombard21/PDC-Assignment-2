@@ -4,6 +4,7 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBManager;
 import dataBaseCode.DBWriter;
 
 import java.awt.Toolkit;

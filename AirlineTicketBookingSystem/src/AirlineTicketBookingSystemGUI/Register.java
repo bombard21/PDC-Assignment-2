@@ -130,7 +130,7 @@ public class Register extends javax.swing.JFrame {
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton ){
             dbw.addRegisterInputToDB();
-
+            this.dispose();
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 

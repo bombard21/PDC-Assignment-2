@@ -98,8 +98,8 @@ public class User extends javax.swing.JFrame {
     private void BookingButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookingButtonActionPerformed
         // TODO add your handling code here:
         if(evt.getSource()== BookingButton){
-            userQuestions users = new userQuestions();
-            users.setVisible(true);
+            Booking booking = new Booking(new DBWriter());
+            booking.setVisible(true);
         }
     }//GEN-LAST:event_BookingButtonActionPerformed
 

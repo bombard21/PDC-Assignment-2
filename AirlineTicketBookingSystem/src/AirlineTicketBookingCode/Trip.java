@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Trip implements TripPlanner{
-    public static TripPlanner trip;
+    public static TripPlanner trip = new Trip();
     private final Random rand = new Random();
 //    public static User user;
     private String arrivalCity;

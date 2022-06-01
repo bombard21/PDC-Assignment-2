@@ -77,7 +77,7 @@ public class SeatPicker extends JFrame implements ActionListener {
         JFrame frame = new JFrame();
         frame.setTitle("Seating Plan");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(300, 300));
+        frame.setSize(new Dimension(400,400));
         frame.add(mainPanel);
         frame.setVisible(true);
     }
@@ -93,20 +93,18 @@ public class SeatPicker extends JFrame implements ActionListener {
                     seats[i][j].setEnabled(false);
                     //set the text of the text field
                     seat.setText("" + (i * 5 + j + 1));
-
-
                     boolean isReserved = reservation.reserveSeat(new Row(i), new Column((char) j));
                     if (!isReserved) {
                         ReservePlane();
                     }
-                    System.out.println(reservation.reserveSeat(new Row(i), new Column((char) j)));
                 }
             }
         }
-        
-        if(e.getSource() == confirm){
-            User user = new User();
-            user.setVisible(true);
+
+        if(e.getSource() == confirm) {
+            //closes the frame
+            JFrame frame = (JFrame) SwingUtilities.getRoot(confirm);
+            frame.dispose();
         }
         
         

@@ -15,7 +15,7 @@ import javax.swing.*;
  */
 public class Ticket extends javax.swing.JFrame{
 
-    public static Ticket ticket;
+    public static Ticket ticket = new Ticket(new DBWriter());
     private DBWriter dbWriter;
     
 
@@ -42,7 +42,7 @@ public class Ticket extends javax.swing.JFrame{
         jTextField1 = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ticketDataArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,9 +53,9 @@ public class Ticket extends javax.swing.JFrame{
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ticketDataArea.setColumns(20);
+        ticketDataArea.setRows(5);
+        jScrollPane1.setViewportView(ticketDataArea);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,9 +103,9 @@ public class Ticket extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTextArea jTextArea1;
     public javax.swing.JTextField jTextField1;
     private javax.swing.JButton searchButton;
+    public javax.swing.JTextArea ticketDataArea;
     // End of variables declaration//GEN-END:variables
 
 }

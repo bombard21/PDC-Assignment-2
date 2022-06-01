@@ -145,6 +145,7 @@ public class Booking extends javax.swing.JFrame {
 
             //if all the fields are valid
             else{
+                dbw.addTicketData();
                 dispose();
                 SeatPicker sp = new SeatPicker(dbw);
                 sp.setVisible(true);

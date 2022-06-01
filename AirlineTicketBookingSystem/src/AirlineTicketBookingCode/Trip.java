@@ -84,13 +84,14 @@ public class Trip implements TripPlanner{
      * @return The time of day.
      */
     public String timeOfDay(int time) {
-        if (time < 12) {
-            return "AM";
-        } else if (time > 12) {
-            return "PM";
-        } else {
-            return "";
-        }
+//        if (time < 12) {
+//            return "AM";
+//        } else if (time > 12) {
+//            return "PM";
+//        } else {
+//            return "";
+//        }
+        return "";
     }
 
 
@@ -114,7 +115,7 @@ public class Trip implements TripPlanner{
 
     @Override
     public String createDepartureDate() {
-        return this.departureDate = "Departure Date: " + rand.nextInt(30) + "/" + rand.nextInt(12) + "/" + rand.nextInt(20) + " " + rand.nextInt(12) + ":" + rand.nextInt(59);
+        return this.departureDate = "Departure Date: " + rand.nextInt(30) + "/" + rand.nextInt(12) + "/" + rand.nextInt(20) ;
     }
 
 

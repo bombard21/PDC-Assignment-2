@@ -4,6 +4,7 @@ import AirlineTicketBookingCode.Column;
 import AirlineTicketBookingCode.Row;
 import AirlineTicketBookingCode.SeatLayout;
 import AirlineTicketBookingCode.setReservation;
+import dataBaseCode.DBWriter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,8 @@ public class SeatPicker extends JFrame implements ActionListener {
 
     public AirlineTicketBookingCode.Reservation reservation;
     //create a double array of JButtons
+
+    private dataBaseCode.DBWriter dbWriter;
     JButton[][] seats;
 
     //create a JPanel to hold the seats
@@ -30,7 +33,8 @@ public class SeatPicker extends JFrame implements ActionListener {
 
 
 
-    public SeatPicker() {
+    public SeatPicker(DBWriter dbwriter) {
+        this.dbWriter = dbwriter;
         //create a new reservation
         reservation = new AirlineTicketBookingCode.Reservation(new SeatLayout(10,5));
         //create a JPanel to ask the user to click on a seat
@@ -89,6 +93,7 @@ public class SeatPicker extends JFrame implements ActionListener {
                     seats[i][j].setEnabled(false);
                     //set the text of the text field
                     seat.setText("" + (i * 5 + j + 1));
+
 
                     boolean isReserved = reservation.reserveSeat(new Row(i), new Column((char) j));
                     if (!isReserved) {

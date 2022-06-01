@@ -136,18 +136,6 @@ public class DBWriter extends Component {
         return false;
     }
 
-    public void addBookingData(){
-        try{
-            String name = Booking.booking.firstNameTextField.getText() + Booking.booking.lastNameTextField.getText();
-            String destination = Booking.booking.destinationTextField.getText();
-            String dob = Booking.booking.dobTextField.getText();
-            String sql = "INSERT INTO BookingData (Name, Destination, DOB) VALUES ('" + name + "', '" + destination + "', '" + dob + "')";
-            System.out.println(sql);
-            statement.executeUpdate(sql);
-        }catch (Exception e){
-            System.out.println("Error: " + e);
-        }
-    }
 
     public void createTicketDatabase(){
         try{

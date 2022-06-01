@@ -15,10 +15,7 @@ import javax.swing.*;
  */
 public class Ticket extends javax.swing.JFrame{
 
-    public static SeatPicker seatPicker;
-    public static User user;
     public static Ticket ticket;
-    public static Trip trip;
     private DBWriter dbWriter;
     
 
@@ -93,7 +90,6 @@ public class Ticket extends javax.swing.JFrame{
         // TODO add your handling code here:
 
         if(evt.getSource() == searchButton){
-            dbWriter.createTicketDatabase();
             dbWriter.addTicketData();
             dbWriter.searchTicketDatabase();
         }

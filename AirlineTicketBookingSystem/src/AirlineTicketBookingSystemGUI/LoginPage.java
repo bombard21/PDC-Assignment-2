@@ -208,7 +208,7 @@ public class LoginPage extends javax.swing.JFrame {
 
         /* Create and display the form */
         DBWriter dbWriter = new DBWriter();
-
+        dbWriter.createTicketDatabase();
         loginpage = new LoginPage(dbWriter);
         loginpage.setVisible(true);
         java.awt.EventQueue.invokeLater(new Runnable() {

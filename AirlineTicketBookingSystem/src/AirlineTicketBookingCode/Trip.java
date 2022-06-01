@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class Trip implements TripPlanner{
-    public static Trip trip;
+    public static TripPlanner trip;
     private final Random rand = new Random();
 //    public static User user;
     private String arrivalCity;
@@ -61,6 +61,8 @@ public class Trip implements TripPlanner{
     }
 
     //generates a random time stamp in a 13-hour format for departure time
+
+
     public String createDepartureTime() {
         this.departureTime = (rand.nextInt(12));
         return this.departureTime + timeOfDay(departureTime);
@@ -111,7 +113,7 @@ public class Trip implements TripPlanner{
     }
 
     @Override
-    public String createDepatureDate() {
+    public String createDepartureDate() {
         return this.departureDate = "Departure Date: " + rand.nextInt(30) + "/" + rand.nextInt(12) + "/" + rand.nextInt(20) + " " + rand.nextInt(12) + ":" + rand.nextInt(59);
     }
 

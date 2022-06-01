@@ -4,6 +4,8 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBWriter;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -84,8 +86,8 @@ public class userQuestions extends javax.swing.JFrame {
         }else if(numberOfPassengers.getText().matches("[0-9]*") && Integer.parseInt(numberOfPassengers.getText()) <= 10){
             JOptionPane.showMessageDialog(this,"The input is Correct");
             if(evt.getSource() == submitButton){
-            booking = new Booking();
-            booking.setVisible(true);
+            Booking.booking = new Booking(new DBWriter());
+            Booking.booking.setVisible(true);
             }
         }
         

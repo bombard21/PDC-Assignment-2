@@ -170,8 +170,8 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         if(evt.getSource() == registerButton){
-            Register register = new Register(dbWriter);
-            register.setVisible(true);
+            Register.registering = new Register(dbWriter);
+            Register.registering.setVisible(true);
         }
     }//GEN-LAST:event_registerButtonActionPerformed
 

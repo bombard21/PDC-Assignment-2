@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Register extends javax.swing.JFrame {
     private dataBaseCode.DBWriter dbw;
-    public static Register register;
+    public static Register registering;
 
 
     public Register(DBWriter dbw) {

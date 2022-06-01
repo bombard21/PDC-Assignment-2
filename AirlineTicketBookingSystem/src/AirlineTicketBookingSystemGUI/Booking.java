@@ -4,6 +4,8 @@
  */
 package AirlineTicketBookingSystemGUI;
 
+import dataBaseCode.DBWriter;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
@@ -13,13 +15,15 @@ import javax.swing.JOptionPane;
  * @author wangx
  */
 public class Booking extends javax.swing.JFrame {
-    
-    private SeatPicker seatPicker;
+
+    public static Booking booking;
+    private dataBaseCode.DBWriter dbw;
 
     /**
      * Creates new form Booking
      */
-    public Booking() {
+    public Booking(DBWriter dbw) {
+        this.dbw = dbw;
         initComponents();
     }
 
@@ -129,14 +133,21 @@ public class Booking extends javax.swing.JFrame {
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         if(evt.getSource() == submitButton){
             //check if all fields are filled in with valid data
-            if(firstNameTextField.getText().matches("[a-zA-Z]+") && lastNameTextField.getText().matches("[a-zA-Z]+") && dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}") && destinationTextField.getText().matches("[a-zA-Z]+")){
-
+            if(firstNameTextField.getText().matches("[a-zA-Z]+")){
+                if(lastNameTextField.getText().matches("[a-zA-Z]+")){
+                    if(dobTextField.getText().matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
+                        if(destinationTextField.getText().matches("[a-zA-Z]+") && destinationTextField.getText().equals(locationList)){
+                            SeatPicker seatPicker = new SeatPicker();
+                            seatPicker.setVisible(true);
+                        }
+                    }
+                }
             }
+
 
            
             
-            SeatPicker seatPicker = new SeatPicker();
-            seatPicker.setVisible(true);
+
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 

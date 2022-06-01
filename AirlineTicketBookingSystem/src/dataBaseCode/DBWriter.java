@@ -9,28 +9,27 @@ package dataBaseCode;
 import AirlineTicketBookingSystemGUI.LoginPage;
 import AirlineTicketBookingSystemGUI.Register;
 import AirlineTicketBookingSystemGUI.User;
+import AirlineTicketBookingSystemGUI.Booking;
 
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.SQLException;
+
+
 /**
  *
  * @author Xiaofeng Wang
  */
 public class DBWriter extends Component {
-    private AirlineTicketBookingSystemGUI.Booking booking;
-    //    private AirlineTicketBookingSystemGUI.LoginPage loginPage;
-//    private AirlineTicketBookingSystemGUI.Register register;
+//    private AirlineTicketBookingSystemGUI.Booking booking;
     private AirlineTicketBookingSystemGUI.Ticket ticket;
     Connection connection;
     private DBManager dbmanager;
     Statement statement;
 
     public DBWriter() {
-//        loginPage = new AirlineTicketBookingSystemGUI.LoginPage(this);
-//        register = new AirlineTicketBookingSystemGUI.Register(this);
 
         dbmanager = new DBManager();
         try {
@@ -62,7 +61,6 @@ public class DBWriter extends Component {
             }
         } catch (Exception e) {
             System.out.println("Error: " + e);
-            System.out.println("database does not exist cunt");
         }
         return false;
     }
@@ -95,21 +93,57 @@ public class DBWriter extends Component {
             }
         } catch (Exception e) {
             System.out.println("Error: " + e);
-            System.out.println("ur details are not in the fucking database");
         }
     }
 
     public void addRegisterInputToDB() {
         try {
-            String username = Register.register.username.getText();
-            String password = String.valueOf(Register.register.password.getPassword());
-            String email = Register.register.email.getText();
-            String sql = "INSERT INTO RegisterData VALUES('" + username + "', '" + password + "', '" + email + "')";
+            String username = Register.registering.username.getText();
+            String password = String.valueOf(Register.registering.password.getPassword());
+            String email = Register.registering.email.getText();
+            System.out.println("USERNAME:"+ username + " PASSWORD:" + password + " EMAIL:" + email);
+            String sql = "INSERT INTO RegisterData (Username, Password, Email) VALUES ('" + username + "', '" + password + "', '" + email + "')";
             System.out.println(sql);
             statement.executeUpdate(sql);
         } catch (Exception e) {
             System.out.println("Error:  " + e);
-            System.out.println("ur details are being fucking added calm down");
+        }
+    }
+
+    public void createBookingDatabase() {
+        try {
+            if (!checkBookingDatabaseExsistence()) {
+                statement.executeUpdate("CREATE TABLE BookingData(Name varchar(255), Destination varchar(255), DOB varchar(255))");
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            System.out.println("database already");
+        }
+    }
+
+    public boolean checkBookingDatabaseExsistence() {
+        //check if the database exists
+        try {
+            ResultSet rs = statement.executeQuery("SELECT * FROM BookingData");
+            if (rs.next()) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+        return false;
+    }
+
+    public void addBookingData(){
+        try{
+            String name = Booking.booking.firstNameTextField.getText() + Booking.booking.lastNameTextField.getText();
+            String destination = Booking.booking.destinationTextField.getText();
+            String dob = Booking.booking.dobTextField.getText();
+            String sql = "INSERT INTO BookingData (Name, Destination, DOB) VALUES ('" + name + "', '" + destination + "', '" + dob + "')";
+            System.out.println(sql);
+            statement.executeUpdate(sql);
+        }catch (Exception e){
+            System.out.println("Error: " + e);
         }
     }
 }

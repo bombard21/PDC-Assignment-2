@@ -177,9 +177,9 @@ public class DBWriter extends Component {
             String name = Booking.booking.firstNameTextField.getText() + Booking.booking.lastNameTextField.getText();
             String arrivalDestination = Booking.booking.destinationTextField.getText();
 
-            String sql = "INSERT INTO TicketData (Name, ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + name + "', '" + arrivalDestination + "', '" + departure + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "', '" + date + "', '" + seatNumber + "')";
-            System.out.println(sql);
-            statement.executeUpdate(sql);
+//            String sql = "INSERT INTO TicketData (Name, ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + name + "', '" + arrivalDestination + "', '" + departure + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "', '" + date + "', '" + seatNumber + "')";
+//            System.out.println(sql);
+//            statement.executeUpdate(sql);
         }catch (Exception e){
             System.out.println("Error: " + e);
         }

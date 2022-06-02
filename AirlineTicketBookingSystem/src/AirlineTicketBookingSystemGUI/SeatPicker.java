@@ -17,7 +17,7 @@ import static AirlineTicketBookingCode.setReservation.ReservePlane;
 public class SeatPicker extends JFrame implements ActionListener {
 
     public AirlineTicketBookingCode.Reservation reservation;
-    SeatPicker seatPicke
+    SeatPicker seatPicker;
     //create a double array of JButtons
 
     private dataBaseCode.DBWriter dbWriter;

@@ -113,10 +113,6 @@ public class Trip implements TripPlanner{
         return this.gateNumber = "Gate " + rand.nextInt(9) + 1;
     }
 
-    @Override
-    public String createDepartureDate() {
-        return this.departureDate = "Departure Date: " + rand.nextInt(30) + "/" + rand.nextInt(12) + "/" + rand.nextInt(20) ;
-    }
 
 
     /**

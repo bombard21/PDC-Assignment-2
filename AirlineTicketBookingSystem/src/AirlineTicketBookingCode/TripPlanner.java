@@ -9,7 +9,6 @@ public interface TripPlanner {
     String timeOfDay(int time);
     String createFlightNumber();
     String createGateNumber();
-    String createDepartureDate();
     void displayTrip() throws IOException;
 
 }

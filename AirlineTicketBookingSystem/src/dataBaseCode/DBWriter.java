@@ -116,7 +116,7 @@ public class DBWriter extends Component {
     public void createTicketDatabase(){
         try{
             if (!checkTicketDatabaseExsistence()){
-                statement.executeUpdate("CREATE TABLE TicketData(FirstName varchar(255),LastName varchar(255), ArrivalDestination varchar(255), Departure varchar(255), FlightNumber varchar(255), BoardingTime varchar(255), Gate varchar(255), Date date, SeatNumber varchar(255))");
+                statement.executeUpdate("CREATE TABLE TicketData(FirstName varchar(255),LastName varchar(255), ArrivalDestination varchar(255), Departure varchar(255), FlightNumber varchar(255), BoardingTime varchar(255), Gate varchar(255), SeatNumber varchar(255))");
             }
         }catch (Exception e){
             System.out.println("Error: " + e);
@@ -143,7 +143,6 @@ public class DBWriter extends Component {
             String boardingTime = Trip.trip.createDepartureTime();
             String gate = Trip.trip.createGateNumber();
             String flightTime = Trip.trip.setArrivalTime();
-            String date = Trip.trip.createDepartureDate();
             String firstName = Booking.booking.firstNameTextField.getText();
             System.out.println(firstName);
             String lastName = Booking.booking.lastNameTextField.getText();
@@ -152,7 +151,7 @@ public class DBWriter extends Component {
             System.out.println(destination);
             String seatNumber = SeatPicker.seat.getText();
 
-            String sql = "INSERT INTO TicketData (FirstName, LastName , ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, Date, SeatNumber) VALUES ('" + firstName + "', '" + lastName +"', '"+ destination + "', '" + flightTime + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "','"+ date +"','"+seatNumber+"')";
+            String sql = "INSERT INTO TicketData (FirstName, LastName , ArrivalDestination, Departure, FlightNumber, BoardingTime, Gate, SeatNumber) VALUES ('" + firstName + "', '" + lastName +"', '"+ destination + "', '" + flightTime + "', '" + flightNumber + "', '" + boardingTime + "', '" + gate + "','"+seatNumber+"')";
             System.out.println(sql);
             statement.executeUpdate(sql);
         }catch (Exception e){
@@ -172,10 +171,9 @@ public class DBWriter extends Component {
                 String flightNumber = rs.getString("FlightNumber");
                 String boardingTime = rs.getString("BoardingTime");
                 String gate = rs.getString("Gate");
-                String date = rs.getString("Date");
                 String seatNumber = rs.getString("SeatNumber");
 
-                String output = ("Name: " + name + "\n" + "Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure + "\n" + "Flight Number: " + flightNumber + "\n" + "Boarding Time: " + boardingTime + "\n" + "Gate: " + gate + "\n" + "Date: " + date + "\n" + "Seat Number: " + seatNumber);
+                String output = ("Name: " + name + "\n" + "Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure + "\n" + "Flight Number: " + flightNumber + "\n" + "Boarding Time: " + boardingTime + "\n" + "Gate: " + gate + "\n" + "Seat Number: " + seatNumber);
                 Ticket.ticket.ticketDataArea.append(output + "\n");
             }
         }catch (Exception e){

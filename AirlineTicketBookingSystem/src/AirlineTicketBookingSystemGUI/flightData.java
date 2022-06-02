@@ -46,10 +46,9 @@ public class flightData extends javax.swing.JFrame {
         planeidLabel.setText("FlightNumber");
 
         checkData.setText("Check");
-        checkData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkDataActionPerformed(evt);
-            }
+        checkData.addActionListener(evt -> {
+            checkDataActionPerformed(evt);
+            flightData.revalidate();
         });
 
         flightDataArea.setEditable(false);
@@ -94,7 +93,13 @@ public class flightData extends javax.swing.JFrame {
     private void checkDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkDataActionPerformed
 
         if(evt.getSource() == checkData){
+            if(!flightNumber.getText().isEmpty()){
+                flightNumber.setText("");
+                flightDataArea.setText("");
+                flightData.revalidate();
+            }
             dbWriter.searchFlightDataBase();
+            flightDataArea.setText(dbWriter.getFlightData());
         }
             
     }//GEN-LAST:event_checkDataActionPerformed

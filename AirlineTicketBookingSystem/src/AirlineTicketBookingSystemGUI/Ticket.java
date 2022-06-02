@@ -29,6 +29,7 @@ public class Ticket extends javax.swing.JFrame{
 
     }
 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,10 +48,9 @@ public class Ticket extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         searchButton.setText("search");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
+        searchButton.addActionListener(evt -> {
+            searchButtonActionPerformed(evt);
+            ticket.revalidate();
         });
 
         ticketDataArea.setEditable(false);
@@ -92,13 +92,20 @@ public class Ticket extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         // TODO add your handling code here:
 
         if(evt.getSource() == searchButton){
+            if(!jTextField1.getText().isEmpty()){
+                jTextField1.setText("");
+                ticketDataArea.setText("");
+                ticket.revalidate();
+            }
             dbWriter.searchTicketDatabase();
-            repaint();
+            ticketDataArea.setText(dbWriter.getTicketData());
         }
+
 
     }//GEN-LAST:event_searchButtonActionPerformed
 

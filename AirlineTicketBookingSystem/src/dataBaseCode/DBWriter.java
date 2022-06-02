@@ -28,6 +28,8 @@ public class DBWriter extends Component {
     Connection connection;
      DBManager dbmanager;
     Statement statement;
+    String ticketDataOutput;
+    String flightDataOutput;
 
     public DBWriter() {
 
@@ -195,6 +197,7 @@ public class DBWriter extends Component {
             ResultSet rs = statement.executeQuery(sql);
             System.out.println(sql);
             //clear the text area
+            Ticket.ticket.ticketDataArea.setText("");
             if (rs.next()){
                 String firstName = rs.getString("FirstName");
                 String lastName = rs.getString("LastName");
@@ -206,8 +209,8 @@ public class DBWriter extends Component {
                 String gate = rs.getString("Gate");
                 String seatNumber = rs.getString("SeatNumber");
 
-                String output = ("firstName: " + firstName + lastName + "\n" +"Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure + "\n"+ "Flight Time: " + flightTime + "hours" + "\n" + "Flight Number: " + flightNumber + "\n" + "Boarding Time: " + boardingTime + "\n" + "Gate: " + gate + "\n" + "Seat Number: " + seatNumber);
-                Ticket.ticket.ticketDataArea.append(output);
+                ticketDataOutput = ("Name: " + firstName + lastName + "\n" +"Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure + "\n"+ "Flight Time: " + flightTime + "hours" + "\n" + "Flight Number: " + flightNumber + "\n" + "Boarding Time: " + boardingTime + "\n" + "Gate: " + gate + "\n" + "Seat Number: " + seatNumber);
+                Ticket.ticket.ticketDataArea.append(ticketDataOutput + "\n");
             }
         }catch (Exception e){
             System.out.println("Error: " + e);
@@ -229,8 +232,8 @@ public class DBWriter extends Component {
                 String arrivalDestination = rs.getString("ArrivalDestination");
                 String departure = rs.getString("Departure");
 
-                String output = ("Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure);
-                flightData.flightData.flightDataArea.append(output);
+                flightDataOutput = ("Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure);
+                flightData.flightData.flightDataArea.append(flightDataOutput + "\n");
             }
 
         } catch (SQLException e) {
@@ -238,6 +241,13 @@ public class DBWriter extends Component {
         }
     }
 
+    public String getTicketData() {
+        return ticketDataOutput;
+    }
+
+    public String getFlightData() {
+        return flightDataOutput;
+    }
 }
 
 

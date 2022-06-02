@@ -22,6 +22,9 @@ public final class DBManager {
         establishConnection();
     }
 
+    /**
+     * If the connection is null, then try to establish a connection to the database
+     */
     public void establishConnection() {
         if (this.connection == null){
             try{
@@ -33,6 +36,9 @@ public final class DBManager {
         }
     }
     
+    /**
+     * If the connection is not null, close it
+     */
     public void closeConnection(){
         if(connection == null){
             try{
@@ -43,6 +49,11 @@ public final class DBManager {
         }
     }
     
+    /**
+     * This function returns the connection object.
+     *
+     * @return The connection object.
+     */
     public Connection getConnection(){
         return this.connection;
     }

@@ -40,6 +40,9 @@ public class DBWriter extends Component {
     }
 
 
+    /**
+     * If the database does not exist, then create the database
+     */
     public void createRegisterDatabase() {
         try {
             //if the database does exist, then create the table
@@ -52,6 +55,11 @@ public class DBWriter extends Component {
         }
     }
 
+    /**
+     * It checks if the database exists
+     *
+     * @return A boolean value.
+     */
     private boolean checkRegisterDatabaseExsistence() {
         //check if the database exists
         try {
@@ -66,6 +74,9 @@ public class DBWriter extends Component {
         return false;
     }
 
+    /**
+     * It checks if the username and password are in the database, and if they are, it logs the user in
+     */
     public void checkLoginToRegister() {
         try {
             String username = LoginPage.loginpage.userName.getText();
@@ -98,6 +109,10 @@ public class DBWriter extends Component {
         }
     }
 
+    /**
+     * It takes the text from the username, password, and email fields in the Register class and inserts them into the
+     * RegisterData table in the database
+     */
     public void addRegisterInputToDB() {
         try {
             String username = Register.registering.username.getText();
@@ -113,6 +128,9 @@ public class DBWriter extends Component {
     }
 
 
+    /**
+     * This function creates a table in the database if the table does not already exist
+     */
     public void createTicketDatabase(){
         try{
             if (!checkTicketDatabaseExsistence()){
@@ -124,6 +142,12 @@ public class DBWriter extends Component {
         }
     }
 
+    /**
+     * It checks if the database exists by trying to select all the data from the database. If it can't find the database,
+     * it will throw an exception. If it can find the database, it will return true
+     *
+     * @return A boolean value.
+     */
     private boolean checkTicketDatabaseExsistence() {
         //check if the database exists
         try {
@@ -137,6 +161,9 @@ public class DBWriter extends Component {
         return false;
     }
 
+    /**
+     * This function takes the data from the text fields in the booking class and adds it to the database
+     */
     public void addTicketData(){
         try{
             String firstName = Booking.booking.firstNameTextField.getText();
@@ -158,6 +185,9 @@ public class DBWriter extends Component {
         }
     }
 
+    /**
+     * This function is used to search the database for a specific ticket
+     */
     public void searchTicketDatabase(){
         try{
             String nameID = Ticket.ticket.jTextField1.getText();
@@ -184,6 +214,10 @@ public class DBWriter extends Component {
         }
     }
 
+    /**
+     * This function searches the database for the flight number that the user inputs and displays the arrival destination
+     * and departure of that flight
+     */
     public void searchFlightDataBase(){
         try{
             String flightNumber = flightData.flightData.flightNumber.getText();

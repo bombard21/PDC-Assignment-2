@@ -105,7 +105,7 @@ public class Trip implements TripPlanner{
         int flightNumber2 = rand.nextInt(9) + 1;
         int flightNumber3 = rand.nextInt(9) + 1;
 
-        return this.flightNumber = flightNumber + " " + flightNumber2 + " " + flightNumber3;
+        return this.flightNumber = flightNumber + "" + flightNumber2 + "" + flightNumber3;
     }
 
     @Override

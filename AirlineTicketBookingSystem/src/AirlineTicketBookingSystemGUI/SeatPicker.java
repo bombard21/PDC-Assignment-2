@@ -16,7 +16,6 @@ import static AirlineTicketBookingCode.setReservation.ReservePlane;
 
 public class SeatPicker extends JFrame implements ActionListener {
 
-    public AirlineTicketBookingCode.Reservation reservation;
     SeatPicker seatPicker;
     //create a double array of JButtons
 
@@ -37,7 +36,6 @@ public class SeatPicker extends JFrame implements ActionListener {
     public SeatPicker(DBWriter dbwriter) {
         this.dbWriter = dbwriter;
         //create a new reservation
-        reservation = new AirlineTicketBookingCode.Reservation(new SeatLayout(10,5));
         //create a JPanel to ask the user to click on a seat
         JPanel promptPanel = new JPanel();
         promptPanel.setLayout(new FlowLayout());
@@ -94,10 +92,6 @@ public class SeatPicker extends JFrame implements ActionListener {
                     seats[i][j].setEnabled(false);
                     //set the text of the text field
                     seat.setText("" + (i * 5 + j + 1));
-                    boolean isReserved = reservation.reserveSeat(new Row(i), new Column((char) j));
-                    if (!isReserved) {
-                        ReservePlane();
-                    }
                 }
             }
         }

@@ -13,8 +13,8 @@ import dataBaseCode.DBWriter;
  */
 public class flightData extends javax.swing.JFrame {
 
-    public static Ticket flightData;
-    private dataBaseCode.DBWriter dbWriter;
+    public static flightData flightData = new flightData();
+    private static dataBaseCode.DBWriter dbWriter = new DBWriter();
 
     /**
      * Creates new form flightData
@@ -52,6 +52,7 @@ public class flightData extends javax.swing.JFrame {
             }
         });
 
+        flightDataArea.setEditable(false);
         flightDataArea.setColumns(20);
         flightDataArea.setRows(5);
         jScrollPane2.setViewportView(flightDataArea);
@@ -104,8 +105,8 @@ public class flightData extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton checkData;
-    private javax.swing.JTextArea flightDataArea;
-    private javax.swing.JTextField flightNumber;
+    public javax.swing.JTextArea flightDataArea;
+    public javax.swing.JTextField flightNumber;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel planeidLabel;
     // End of variables declaration//GEN-END:variables

@@ -163,7 +163,6 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         if(evt.getSource() == loginButton){
-            dbWriter.createRegisterDatabase();
             dbWriter.checkLoginToRegister();
         }
 
@@ -209,6 +208,7 @@ public class LoginPage extends javax.swing.JFrame {
         /* Create and display the form */
         DBWriter dbWriter = new DBWriter();
         dbWriter.createTicketDatabase();
+        dbWriter.createRegisterDatabase();
         loginpage = new LoginPage(dbWriter);
         loginpage.setVisible(true);
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -142,14 +142,10 @@ public class Booking extends javax.swing.JFrame {
             }else if((!destinationTextField.getText().matches("[a-zA-Z]+")) && (!destinationTextField.getText().equals(locationList))){
                 JOptionPane.showMessageDialog(this,"Please enter a valid destination");
             }
-
-            //if all the fields are valid
-            else{
-                dbw.addTicketData();
-                dispose();
-                SeatPicker sp = new SeatPicker(dbw);
-                sp.setVisible(true);
-            }
+            dbw.addTicketData();
+            dispose();
+            SeatPicker sp = new SeatPicker(dbw);
+            sp.setVisible(true);
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 

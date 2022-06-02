@@ -6,11 +6,14 @@
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/Ticket.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/Trip.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingCode/TripPlanner.java</file>
+            <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/test/AirlineTicketBookingCode/TripTest.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/SeatPicker.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/flightData.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/User.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/dataBaseCode/DBWriter.java</file>
+            <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/test/dataBaseCode/DBWriterTest.java</file>
             <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/src/AirlineTicketBookingSystemGUI/Booking.java</file>
+            <file>file:/C:/UniWork/PDC/PDC-Assignment-2/AirlineTicketBookingSystem/test/AirlineTicketBookingSystemGUI/SeatPickerTest.java</file>
         </group>
     </open-files>
 </project-private>

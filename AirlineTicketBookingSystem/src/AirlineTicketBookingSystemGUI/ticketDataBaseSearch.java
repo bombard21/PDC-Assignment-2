@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 public class ticketDataBaseSearch extends JFrame implements ActionListener {
-    private static dataBaseCode.DBManager dbManager;
+    private static DBManager dbManager;
     private static Statement stmt;
     private static Connection conn;
     private JButton search;
@@ -23,7 +23,7 @@ public class ticketDataBaseSearch extends JFrame implements ActionListener {
 
 
 
-        frame = new JFrame("Search");
+        frame = new JFrame("Ticket Search");
         frame.setSize(800, 800);
         frame.setLayout(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,7 +34,7 @@ public class ticketDataBaseSearch extends JFrame implements ActionListener {
         search.addActionListener(this);
         frame.add(search);
 
-        searchLabel = new JLabel("Enter Ticket ID");
+        searchLabel = new JLabel("Enter First Name");
         searchLabel.setBounds(50, 100, 100, 30);
         frame.add(searchLabel);
 
@@ -82,9 +82,7 @@ public class ticketDataBaseSearch extends JFrame implements ActionListener {
         }
     }
 
-    public static void main(String[] args) {
-        new ticketDataBaseSearch();
-    }
+
 
 
 }

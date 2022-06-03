@@ -205,6 +205,8 @@ public class LoginPage extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
+        DBManager manager = new DBManager();
+        System.out.println(manager.getConnection());
         /* Create and display the form */
         DBWriter dbWriter = new DBWriter();
         dbWriter.createTicketDatabase();

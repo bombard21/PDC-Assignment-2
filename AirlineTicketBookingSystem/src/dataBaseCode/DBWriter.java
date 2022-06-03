@@ -190,64 +190,6 @@ public class DBWriter extends Component {
     /**
      * This function is used to search the database for a specific ticket
      */
-    public void searchTicketDatabase(){
-        try{
-            String nameID = Ticket.ticket.jTextField1.getText();
-            String sql = "SELECT * FROM TicketData WHERE FirstName = '" + nameID + "'";
-            ResultSet rs = statement.executeQuery(sql);
-            System.out.println(sql);
-            //clear the text area
-            Ticket.ticket.ticketDataArea.setText("");
-            if (rs.next()){
-                String firstName = rs.getString("FirstName");
-                String lastName = rs.getString("LastName");
-                String arrivalDestination = rs.getString("ArrivalDestination");
-                String departure = rs.getString("Departure");
-                String flightNumber = rs.getString("FlightNumber");
-                String flightTime = rs.getString("FlightTime");
-                String boardingTime = rs.getString("BoardingTime");
-                String gate = rs.getString("Gate");
-                String seatNumber = rs.getString("SeatNumber");
-
-                ticketDataOutput = ("Name: " + firstName + lastName + "\n" +"Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure + "\n"+ "Flight Time: " + flightTime + "hours" + "\n" + "Flight Number: " + flightNumber + "\n" + "Boarding Time: " + boardingTime + "\n" + "Gate: " + gate + "\n" + "Seat Number: " + seatNumber);
-                Ticket.ticket.ticketDataArea.append(ticketDataOutput + "\n");
-            }
-        }catch (Exception e){
-            System.out.println("Error: " + e);
-        }
-    }
-
-    /**
-     * This function searches the database for the flight number that the user inputs and displays the arrival destination
-     * and departure of that flight
-     */
-    public void searchFlightDataBase(){
-        try{
-            String flightNumber = flightData.flightData.flightNumber.getText();
-            String sql = "SELECT * FROM TicketData WHERE FlightNumber = '" + flightNumber + "'";
-            ResultSet rs = statement.executeQuery(sql);
-            //clear the text area
-            flightData.flightData.flightDataArea.setText("");
-            if(rs.next()){
-                String arrivalDestination = rs.getString("ArrivalDestination");
-                String departure = rs.getString("Departure");
-
-                flightDataOutput = ("Arrival Destination: " + arrivalDestination + "\n" + "Departure: " + departure);
-                flightData.flightData.flightDataArea.append(flightDataOutput + "\n");
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String getTicketData() {
-        return ticketDataOutput;
-    }
-
-    public String getFlightData() {
-        return flightDataOutput;
-    }
 }
 
 

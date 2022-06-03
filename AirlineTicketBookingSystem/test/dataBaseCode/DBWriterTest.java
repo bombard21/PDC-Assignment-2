@@ -91,26 +91,7 @@ public class DBWriterTest {
         // TODO review the generated test code and remove the default call to fail.
     }
 
-    /**
-     * Test of searchTicketDatabase method, of class DBWriter.
-     */
-    @Test
-    public void testSearchTicketDatabase() {
-        System.out.println("searchTicketDatabase");
-        DBWriter instance = new DBWriter();
-        instance.searchTicketDatabase();
-        // TODO review the generated test code and remove the default call to fail.
-    }
 
-    /**
-     * Test of searchFlightDataBase method, of class DBWriter.
-     */
-    @Test
-    public void testSearchFlightDataBase() {
-        System.out.println("searchFlightDataBase");
-        DBWriter instance = new DBWriter();
-        instance.searchFlightDataBase();
-        // TODO review the generated test code and remove the default call to fail.
-    }
+
     
 }

@@ -134,4 +134,5 @@ public class User extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JButton ticketButton;
     // End of variables declaration//GEN-END:variables
+
 }

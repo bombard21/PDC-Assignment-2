@@ -52,15 +52,5 @@ public class SeatPickerTest {
     /**
      * Test of getSeatNumber method, of class SeatPicker.
      */
-    @Test
-    public void testGetSeatNumber() {
-        System.out.println("getSeatNumber");
-        SeatPicker instance = null;
-        String expResult = "";
-        String result = instance.getSeatNumber();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
-        
-    }
     
 }

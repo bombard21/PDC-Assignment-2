@@ -28,9 +28,8 @@ public class SeatPicker extends JFrame implements ActionListener {
     private JLabel prompt;
     private JLabel prompt2;
     //create a text field for the selected seat
-    public static JTextField seat = new JTextField(10);
+    public static JTextField seat;
     private JButton confirm;
-
 
 
     public SeatPicker(DBWriter dbwriter) {
@@ -76,7 +75,7 @@ public class SeatPicker extends JFrame implements ActionListener {
         JFrame frame = new JFrame();
         frame.setTitle("Seating Plan");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(400,400));
+        frame.setSize(new Dimension(400, 400));
         frame.add(mainPanel);
         frame.setVisible(true);
     }
@@ -85,9 +84,9 @@ public class SeatPicker extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        for(int i = 0; i < 10; i++) {
-            for(int j = 0; j < 5; j++) {
-                if(e.getSource() == seats[i][j]) {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (e.getSource() == seats[i][j]) {
                     //disable the button
                     seats[i][j].setEnabled(false);
                     //set the text of the text field
@@ -96,18 +95,15 @@ public class SeatPicker extends JFrame implements ActionListener {
             }
         }
 
-        if(e.getSource() == confirm) {
+        if (e.getSource() == confirm) {
+            dbWriter.addTicketData();
             //closes the frame
             JFrame frame = (JFrame) SwingUtilities.getRoot(confirm);
             frame.dispose();
         }
-        
-        
-    }
 
 
-    public String getSeatNumber() {
-        return seat.getText();
     }
+
 }
 

@@ -108,7 +108,6 @@ public class User extends javax.swing.JFrame {
     private void flightDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_flightDataButtonActionPerformed
         // TODO add your handling code here:
         if (evt.getSource() == flightDataButton){
-            dispose();
             flightDataBaseSearch flightSearch = new flightDataBaseSearch();
             flightSearch.setVisible(true);
         }
@@ -117,7 +116,6 @@ public class User extends javax.swing.JFrame {
     private void ticketButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ticketButtonActionPerformed
         // TODO add your handling code here:
         if(evt.getSource() == ticketButton){
-            dispose();
             ticketDataBaseSearch ticketSearch = new ticketDataBaseSearch();
             ticketSearch.setVisible(true);
         }

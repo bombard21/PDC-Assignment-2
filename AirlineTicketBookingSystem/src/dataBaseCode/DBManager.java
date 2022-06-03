@@ -57,11 +57,5 @@ public final class DBManager {
     public Connection getConnection(){
         return this.connection;
     }
-    
-    
-    
-//    public static void main(String[] args){
-//        DBManager manager = new DBManager();
-//        System.out.println(manager.getConnection());
-//    }
+
 }
